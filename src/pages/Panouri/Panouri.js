@@ -88,7 +88,7 @@ function Panouri() {
                 }
                 {isAdding === true &&
                     <div>
-                        <div className='x-btn' onClick={handleAdd}>X</div>
+
                         <div className='inputs-body'>
                             <div className='input-flex'>
                                 <div className='input-name'>Denumire panou: </div>
@@ -106,7 +106,10 @@ function Panouri() {
                                 <div className='input-name'>Grosime panou: </div>
                                 <input className='input-value2' onChange={(e) => setGrosimePanou(e.target.value)}></input>
                             </div>
-                            <button className='add-btn2' onClick={addTodo}>Adauga</button>
+                            <div className='butoane'>
+                                <button className='add-btn2' onClick={addTodo}>Adauga</button>
+                                <div className='x-btn' onClick={handleAdd}>X</div>
+                            </div>
                         </div>
 
                     </div>

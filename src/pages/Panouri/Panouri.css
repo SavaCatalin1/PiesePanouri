@@ -41,16 +41,17 @@ table {
 }
 
 .x-btn {
-    padding: 1rem;
-    width: 0.5rem;
-    height: 0.5rem;
-    cursor: pointer;
-    background-color: #060c142c;
-    border-radius: 2rem;
     display: flex;
-    justify-content: center;
     align-items: center;
+    width: .5rem;
+    padding: 1rem;
+    height: .2rem;
+    border-radius: 10px;
+    cursor: pointer;
     margin-top: 1rem;
+    background-color: #060c1418;
+    border: 2px solid;
+    margin-left: 2rem;
 }
 
 .x-btn:hover {
@@ -81,7 +82,8 @@ table {
 }
 
 .input-name {
-    width: 8rem;
+    width: 8.5rem;
+    font-weight: bold;
 }
 
 .add-btn2 {
@@ -100,7 +102,7 @@ table {
 .th-nume {
     background-color: #060c14;
     color: white;
-    min-width: 2rem;
+    min-width: 35rem;
     padding-right: 10rem;
     text-align: center;
     padding: 10px;
@@ -114,7 +116,7 @@ table {
     width: 100px;
     padding-right: 10rem;
     text-align: center;
-    padding: 10px;
+    padding: .5rem;
     font-size: 17px;
 }
 
@@ -146,4 +148,177 @@ table {
     padding: 10px;
     font-size: 17px;
     cursor: pointer;
+}
+
+.butoane {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 3rem;
+}
+
+@media (max-width:1025px) {
+
+    .home {
+        margin-left: 0%;
+
+    }
+
+    table {
+
+        padding-right: 1rem;
+        text-align: center;
+    }
+
+    .table_header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .table_row {
+        background-color: rgba(128, 128, 128, 0.168);
+    }
+
+    table {
+        margin-top: 3.5rem;
+    }
+
+    .table_body {
+        display: flex;
+    }
+
+    .add-btn {
+        position: absolute;
+        top: 0;
+        right: 30%;
+        padding: 1rem;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    .add-btn:hover {
+        background-color: black;
+        color: white;
+    }
+
+    .x-btn {
+        display: flex;
+        align-items: center;
+        width: .5rem;
+        padding: 1rem;
+        height: .2rem;
+        border-radius: 10px;
+        cursor: pointer;
+        margin-top: 1rem;
+        background-color: #060c1418;
+        border: 2px solid;
+        margin-left: 2rem;
+    }
+
+    .x-btn:hover {
+        background-color: #060c1464;
+    }
+
+    .inputs-body {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        margin-top: 4rem;
+        margin-left: 2rem;
+    }
+
+    .input-value {
+        width: 15rem;
+
+    }
+
+    .input-value2 {
+        width: 5rem;
+        text-align: center;
+    }
+
+    .input-flex {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .input-name {
+        width: 8rem;
+    }
+
+    .add-btn2 {
+        width: 6rem;
+        padding: 1rem;
+        border-radius: 10px;
+        cursor: pointer;
+        margin-top: 1rem;
+    }
+
+    .add-btn2:hover {
+        background-color: black;
+        color: white;
+    }
+
+    .th-nume {
+        background-color: #060c14;
+        color: white;
+        min-width: 2rem;
+        padding-right: 10rem;
+        text-align: center;
+        padding: 10px;
+        font-size: 17px;
+
+    }
+
+    .th-dimensiuni {
+        background-color: #060c14;
+        color: white;
+        width: 100px;
+        padding-right: 10rem;
+        text-align: center;
+        padding: 10px;
+        font-size: 17px;
+    }
+
+    .td-nume {
+        background-color: #ffffff;
+        width: 35rem;
+        padding-right: 10rem;
+        text-align: start;
+        padding: 10px;
+        font-size: 17px;
+
+    }
+
+    .td-dimensiuni {
+        background-color: #ffffff;
+        width: 100px;
+        padding-right: 10rem;
+        text-align: center;
+        padding: 10px;
+        font-size: 17px;
+    }
+
+    .td-remove {
+        background-color: #e8e8e8d1;
+        color: red;
+        width: 0.5rem;
+        padding-right: 10rem;
+        text-align: center;
+        padding: 10px;
+        font-size: 17px;
+        cursor: pointer;
+    }
+
+    .butoane {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 3rem;
+    }
+
+
 }
