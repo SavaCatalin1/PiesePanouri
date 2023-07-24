@@ -3,6 +3,9 @@ import "./Home.css"
 import Sidebar from "../../components/Sidebar/Sidebar"
 import { collection, getDocs } from 'firebase/firestore/lite';
 import { db } from '../../firebase';
+import Panouri from './panouri/Panouri';
+import Detaliipanou from './detaliipanou/Detaliipanou';
+import Rezultate from './rezultate/Rezultate';
 
 const tipmontaje = ["Plana", "Acoperis", "Mini Rail"]
 
@@ -214,7 +217,7 @@ function Home() {
 
     useEffect(() => {
         fetchPost()
-    }, [panouri])
+    }, [])
 
 
     return (
@@ -230,15 +233,10 @@ function Home() {
                 <div className='tip-montaj'>
                     <div className='montaj-title'>Panou:</div>
                     <select className='select-panou' onChange={e => onChangePanou(e)} defaultValue="none">
-                        <option value="none" disabled hidden />
-                        {panouri.map((panou, index) => (
-                            <option key={index} value={panou.nume}>{panou.nume}</option>
-                        ))}
+                        <Panouri panouri={panouri} />
                     </select>
 
-                    <div className='detaliu-panou'>Lungime: {panou[0]}</div>
-                    <div className='detaliu-panou'>Latime: {panou[1]}</div>
-                    <div className='detaliu-panou'>Grosime: {panou[2]}</div>
+                    <Detaliipanou panou={panou} />
                 </div>
                 <div className='nr-rand-cont'>
                     <div className='montaj-title'>Numar de randuri:</div>
@@ -266,17 +264,7 @@ function Home() {
                             <button className='calc-btn' type='submit'>Calculeaza</button>
                         </div>}
                     {showRez ?
-                        <div className='rezultate-body'>
-                            <div className='rezultate-row'>{tipMontaj === 1 && <span><b>Cleme mici: </b> {rezultat[0]} buc</span>}{tipMontaj === 0 && <span><b>Cleme interioare:</b> {rezultat[0]} buc</span>}{tipMontaj === 2 && <span><b>Cleme interioare:</b> {rezultat[0]} buc</span>}</div>
-
-                            <div className='rezultate-row'>{tipMontaj === 1 && <span><b>Cleme mari:</b> {rezultat[1]} buc</span>}{tipMontaj === 0 && <span><b>Cleme exterioare:</b> {rezultat[1]} buc</span>}{tipMontaj === 2 && <span><b>Cleme exterioare:</b> {rezultat[1]} buc</span>}</div>
-
-                            <div className='rezultate-row'><b>Sina:</b> {tipMontaj === 2 && <span>{rezultat[2]} buc</span>}{tipMontaj === 1 && <span>{rezultat[2] / 1000} m</span>}{tipMontaj === 0 && <span>{rezultat[2] / 1000} m</span>}</div>
-
-                            <div className='rezultate-row'><b>Caramele:</b> {tipMontaj === 2 && <span>{rezultat[3]} buc</span>}{tipMontaj === 1 && <span>{rezultat[3]} buc</span>}{tipMontaj === 0 && <span>{rezultat[3]} buc</span>}</div>
-
-                            <div className='rezultate-row'><b>Suruburi:</b> {tipMontaj === 2 && <span>{rezultat[4]} buc</span>}{tipMontaj === 1 && <span>{rezultat[4]} buc</span>}{tipMontaj === 0 && <span>{rezultat[4]} buc</span>}</div>
-                        </div>
+                        <Rezultate tipMontaj={tipMontaj} rezultat={rezultat} />
                         : ""}
                 </form>
             </div >

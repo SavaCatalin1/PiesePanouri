@@ -61,7 +61,7 @@ function Panouri() {
             <Sidebar />
             <div className='home'>
                 {isAdding === false &&
-                    <div class="table_body">
+                    <div className="table_body">
 
                         <table>
                             <thead>
