@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/SavaCatalin1/PiesePanouri/static/css/main.22c854fc.css",
+    "main.js": "/SavaCatalin1/PiesePanouri/static/js/main.0f2bb094.js",
+    "static/js/787.bc4cbcab.chunk.js": "/SavaCatalin1/PiesePanouri/static/js/787.bc4cbcab.chunk.js",
+    "index.html": "/SavaCatalin1/PiesePanouri/index.html",
+    "main.22c854fc.css.map": "/SavaCatalin1/PiesePanouri/static/css/main.22c854fc.css.map",
+    "main.0f2bb094.js.map": "/SavaCatalin1/PiesePanouri/static/js/main.0f2bb094.js.map",
+    "787.bc4cbcab.chunk.js.map": "/SavaCatalin1/PiesePanouri/static/js/787.bc4cbcab.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.22c854fc.css",
+    "static/js/main.0f2bb094.js"
+  ]
+}
