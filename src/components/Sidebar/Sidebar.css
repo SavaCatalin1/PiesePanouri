@@ -1,0 +1,35 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 15%;
+    background-color: rgba(0, 0, 0, 0.378);
+    height: 100%;
+}
+
+li {
+    padding: 1.7rem;
+    margin-bottom: 1rem;
+    list-style-type: none;
+    background-color: gray;
+    border-radius: 2rem;
+    font-size: 18px;
+    margin-left: 0px;
+    color: white;
+    cursor: pointer;
+}
+
+li:hover {
+    background-color: rgba(128, 128, 128, 0.429);
+}
+
+ul {
+    padding: 10px;
+}
+
+@media (max-width:1025px) {
+
+    .sidebar {
+        display: none;
+    }
+}

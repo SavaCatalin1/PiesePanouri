@@ -1,0 +1,296 @@
+.home {
+    margin-left: 16%;
+}
+
+.tip-montaj {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.montaj-title {
+    margin-top: 3rem;
+    padding-right: 2rem;
+}
+
+.montaj-btn {
+    min-width: 50px;
+    padding: 2rem;
+    background-color: aquamarine;
+    margin-right: 2rem;
+    margin-top: 2rem;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.montaj-btn:hover {
+    background-color: rgba(127, 255, 212, 0.305);
+}
+
+.select-panou {
+    margin-top: 3rem;
+    height: 2rem;
+    min-width: 30rem;
+}
+
+.detaliu-panou {
+    margin-top: 3rem;
+    padding-left: 1rem;
+    padding-right: 4rem;
+}
+
+.montaj-btn-active {
+    text-align: center;
+    min-width: 50px;
+    padding: 2rem;
+    background-color: rgb(60, 245, 183);
+    margin-right: 2rem;
+    margin-top: 2rem;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.select-randuri {
+    margin-top: 3rem;
+    height: 1rem;
+    width: 3rem;
+    text-align: center;
+
+}
+
+.nr-randuri {
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+
+.randuri-title {
+    margin-top: 1rem;
+    padding-right: 1rem;
+    width: 15rem;
+}
+
+.randuri-value {
+    margin-top: 1rem;
+    height: 1rem;
+    width: 3rem;
+    text-align: center;
+}
+
+.calc-btn {
+    position: relative;
+    margin-top: 2rem;
+    padding: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.calc-btn:hover {
+    background-color: grey;
+    color: white;
+}
+
+.btn-randuri {
+    margin-top: 3rem;
+    height: 25px;
+    width: 3rem;
+    margin-left: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btn-randuri:hover {
+    background-color: beige;
+}
+
+.rezultate-body {
+    margin-top: 1rem;
+    background-color: aquamarine;
+    width: 30%;
+    border-radius: 10px;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.rezultate-row {
+    padding: 10px;
+}
+
+.rez-rand {
+    margin-top: 1rem;
+    background-color: aqua;
+    margin-left: 2rem;
+    width: 9rem;
+    text-align: center;
+}
+
+.rez-flex {
+    display: flex;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.nr-rand-cont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width:1025px) {
+    .home {
+        margin-left: 16%;
+    }
+
+    .tip-montaj {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .montaj-title {
+        margin-top: 1rem;
+        padding-right: 2rem;
+    }
+
+    .montaj-btn {
+        min-width: 50px;
+        padding: 2rem;
+        background-color: aquamarine;
+        margin-right: 2rem;
+        margin-top: 2rem;
+        border-radius: 10px;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    .montaj-btn:hover {
+        background-color: rgba(127, 255, 212, 0.305);
+    }
+
+    .select-panou {
+        margin-top: 1rem;
+        height: 2rem;
+        min-width: 20rem;
+
+    }
+
+    .detaliu-panou {
+        margin-top: 1rem;
+        padding-left: 0rem;
+        padding-right: 0rem;
+    }
+
+    .montaj-btn-active {
+        text-align: center;
+        min-width: 50px;
+        padding: 2rem;
+        background-color: rgb(60, 245, 183);
+        margin-right: 2rem;
+        margin-top: 2rem;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    .select-randuri {
+        margin-top: 1rem;
+        height: 2rem;
+        width: 3rem;
+        text-align: center;
+        font-size: large;
+        margin-right: 1rem;
+    }
+
+    .nr-randuri {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+
+    .randuri-title {
+        margin-top: 1rem;
+        padding-right: 1rem;
+    }
+
+    .randuri-value {
+        margin-top: 1rem;
+        height: 2rem;
+        width: 3rem;
+        text-align: center;
+        font-size: large;
+    }
+
+    .calc-btn {
+        position: relative;
+        margin-top: 2rem;
+        padding: 2rem;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: larger;
+    }
+
+    .calc-btn:hover {
+        background-color: grey;
+        color: white;
+    }
+
+    .btn-randuri {
+        margin-top: 3rem;
+        height: 25px;
+        width: 3rem;
+        margin-left: 1rem;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    .btn-randuri:hover {
+        background-color: beige;
+    }
+
+    .rezultate-body {
+        margin-top: 1rem;
+        background-color: aquamarine;
+        width: 100%;
+        border-radius: 10px;
+        margin: auto;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .rezultate-row {
+        padding: 10px;
+    }
+
+    .rez-rand {
+        margin-top: 1rem;
+        background-color: aqua;
+        margin-left: 1rem;
+        width: 5rem;
+        text-align: center;
+    }
+
+    .rez-flex {
+        display: flex;
+    }
+
+    .btn-container {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
+
+    .nr-rand-cont {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+}

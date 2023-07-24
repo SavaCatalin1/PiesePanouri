@@ -1,0 +1,149 @@
+.home {
+    margin-left: 16%;
+}
+
+table {
+
+    padding-right: 10rem;
+    text-align: center;
+}
+
+.table_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.table_row {
+    background-color: rgba(128, 128, 128, 0.168);
+}
+
+table {
+    margin-top: 2rem;
+}
+
+.table_body {
+    display: flex;
+}
+
+.add-btn {
+    position: absolute;
+    top: 3rem;
+    right: 3rem;
+    padding: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.add-btn:hover {
+    background-color: black;
+    color: white;
+}
+
+.x-btn {
+    padding: 1rem;
+    width: 0.5rem;
+    height: 0.5rem;
+    cursor: pointer;
+    background-color: #060c142c;
+    border-radius: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.x-btn:hover {
+    background-color: #060c1464;
+}
+
+.inputs-body {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin-top: 2rem;
+    margin-left: 2rem;
+}
+
+.input-value {
+    width: 30rem;
+
+}
+
+.input-value2 {
+    width: 5rem;
+    text-align: center;
+}
+
+.input-flex {
+    display: flex;
+    padding: 1rem;
+}
+
+.input-name {
+    width: 8rem;
+}
+
+.add-btn2 {
+    width: 6rem;
+    padding: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.add-btn2:hover {
+    background-color: black;
+    color: white;
+}
+
+.th-nume {
+    background-color: #060c14;
+    color: white;
+    min-width: 2rem;
+    padding-right: 10rem;
+    text-align: center;
+    padding: 10px;
+    font-size: 17px;
+
+}
+
+.th-dimensiuni {
+    background-color: #060c14;
+    color: white;
+    width: 100px;
+    padding-right: 10rem;
+    text-align: center;
+    padding: 10px;
+    font-size: 17px;
+}
+
+.td-nume {
+    background-color: #ffffff;
+    width: 35rem;
+    padding-right: 10rem;
+    text-align: start;
+    padding: 10px;
+    font-size: 17px;
+
+}
+
+.td-dimensiuni {
+    background-color: #ffffff;
+    width: 100px;
+    padding-right: 10rem;
+    text-align: center;
+    padding: 10px;
+    font-size: 17px;
+}
+
+.td-remove {
+    background-color: #e8e8e8d1;
+    color: red;
+    width: 0.5rem;
+    padding-right: 10rem;
+    text-align: center;
+    padding: 10px;
+    font-size: 17px;
+    cursor: pointer;
+}
