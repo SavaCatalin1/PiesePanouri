@@ -33,11 +33,13 @@ table {
     padding: 1rem;
     border-radius: 10px;
     cursor: pointer;
+    background-color: aqua;
+    font-weight: 500;
 }
 
 .add-btn:hover {
-    background-color: black;
-    color: white;
+    background-color: rgba(0, 255, 255, 0.2);
+    color: black;
 }
 
 .x-btn {
@@ -49,13 +51,13 @@ table {
     border-radius: 10px;
     cursor: pointer;
     margin-top: 1rem;
-    background-color: #060c1418;
+    background-color: aqua;
     border: 2px solid;
     margin-left: 2rem;
 }
 
 .x-btn:hover {
-    background-color: #060c1464;
+    background-color: rgba(0, 255, 255, 0.2);
 }
 
 .inputs-body {
@@ -92,16 +94,17 @@ table {
     border-radius: 10px;
     cursor: pointer;
     margin-top: 1rem;
+    background-color: aqua;
 }
 
 .add-btn2:hover {
-    background-color: black;
-    color: white;
+    background-color: rgba(0, 255, 255, 0.2);
+    color: black;
 }
 
 .th-nume {
-    background-color: #060c14;
-    color: white;
+    background-color: aqua;
+    color: black;
     min-width: 35rem;
     padding-right: 10rem;
     text-align: center;
@@ -111,8 +114,8 @@ table {
 }
 
 .th-dimensiuni {
-    background-color: #060c14;
-    color: white;
+    background-color: aqua;
+    color: black;
     width: 100px;
     padding-right: 10rem;
     text-align: center;
@@ -160,6 +163,7 @@ table {
 @media (max-width:1025px) {
 
     .home {
+
         margin-left: 0%;
         width: 100%;
         display: flex;
@@ -191,9 +195,11 @@ table {
 
     .table_body {
         display: flex;
+
     }
 
     .add-btn {
+        margin-top: -2rem;
         position: relative;
         margin-left: 7rem;
         width: 4rem;
@@ -210,7 +216,7 @@ table {
     }
 
     .add-btn:hover {
-        background-color: rgba(0, 0, 0, 0.104);
+        background-color: rgba(0, 255, 255, 0.2);
         color: black;
     }
 
@@ -223,13 +229,13 @@ table {
         border-radius: 10px;
         cursor: pointer;
         margin-top: 1rem;
-        background-color: #060c1418;
+        background-color: aqua;
         border: 2px solid;
         margin-left: 2rem;
     }
 
     .x-btn:hover {
-        background-color: #060c1464;
+        background-color: rgba(0, 255, 255, 0.2);
     }
 
     .inputs-body {
@@ -267,11 +273,12 @@ table {
         border-radius: 10px;
         cursor: pointer;
         margin-top: 1rem;
+        background-color: aqua;
     }
 
     .add-btn2:hover {
-        background-color: black;
-        color: white;
+        background-color: rgba(0, 255, 255, 0.2);
+        color: black;
     }
 
     .th-nume {

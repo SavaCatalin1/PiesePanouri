@@ -3,24 +3,24 @@
     top: 0;
     left: 0;
     width: 15%;
-    background-color: rgba(0, 0, 0, 0.378);
+    background-color: rgba(0, 0, 0, 0.3);
     height: 100%;
 }
 
 li {
-    padding: 1.7rem;
+    padding: 1.3rem;
     margin-bottom: 1rem;
     list-style-type: none;
-    background-color: gray;
-    border-radius: 2rem;
+    background-color: aqua;
+    border-radius: 1rem;
     font-size: 18px;
     margin-left: 0px;
-    color: white;
+    color: black;
     cursor: pointer;
 }
 
 li:hover {
-    background-color: rgba(128, 128, 128, 0.429);
+    background-color: rgba(0, 255, 255, 0.544);
 }
 
 ul {
@@ -55,7 +55,8 @@ ul {
     }
 
     li {
-        padding: 1.7rem 5rem;
+
+        padding: 1.2rem 4rem;
         margin-bottom: 1rem;
         list-style-type: none;
         background-color: aqua;
@@ -64,6 +65,10 @@ ul {
         margin-left: 0px;
         color: black;
         cursor: pointer;
+    }
+
+    ul {
+        margin-top: 3rem;
     }
 
     .toggle-btn {
