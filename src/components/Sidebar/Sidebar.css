@@ -38,10 +38,20 @@ ul {
 @media (max-width:1025px) {
 
     .sidebar {
+        display: none;
+    }
+
+    .sidebar-off {
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.378);
+        height: 100%;
         display: flex;
         width: 100%;
         justify-content: center;
         background-color: rgba(0, 0, 0, 0.8);
+        z-index: 99;
     }
 
     li {

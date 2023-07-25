@@ -18,7 +18,7 @@ function Sidebar() {
 
     return (
         <>
-            <div className="toggle-btn" onClick={handleToggle}>{toggled ? <MenuIcon /> : <CloseIcon />}</div>
+            <div className="toggle-btn" onClick={handleToggle}>{toggled ? <CloseIcon /> : <MenuIcon />}</div>
             <div className={toggled ? "sidebar-off" : "sidebar"}>
                 <ul>
                     <Link to="/" style={{ textDecoration: 'none' }} > <li>Home</li></Link>

@@ -61,6 +61,8 @@ function Panouri() {
             <Sidebar />
             <div className='home'>
                 {isAdding === false &&
+                    <button className='add-btn' onClick={handleAdd}>Adauga</button>}
+                {isAdding === false &&
                     <div className="table_body">
 
                         <table>
@@ -83,7 +85,7 @@ function Panouri() {
                                 </tr>
                             ))}
                         </table>
-                        <button className='add-btn' onClick={handleAdd}>Adauga</button>
+
                     </div>
                 }
                 {isAdding === true &&

@@ -161,13 +161,18 @@ table {
 
     .home {
         margin-left: 0%;
-
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     table {
 
-        padding-right: 1rem;
+        padding-right: 0rem;
         text-align: center;
+        margin-right: .4rem;
     }
 
     .table_header {
@@ -189,17 +194,24 @@ table {
     }
 
     .add-btn {
-        position: absolute;
-        top: 0;
-        right: 30%;
+        position: relative;
+        margin-left: 7rem;
+        width: 4rem;
+        height: 1rem;
+        font-size: 12px;
         padding: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         border-radius: 10px;
         cursor: pointer;
+        z-index: 0;
+
     }
 
     .add-btn:hover {
-        background-color: black;
-        color: white;
+        background-color: rgba(0, 0, 0, 0.104);
+        color: black;
     }
 
     .x-btn {
@@ -246,7 +258,7 @@ table {
     }
 
     .input-name {
-        width: 8rem;
+        width: 12rem;
     }
 
     .add-btn2 {
@@ -265,11 +277,12 @@ table {
     .th-nume {
         background-color: #060c14;
         color: white;
-        min-width: 2rem;
+        min-width: 8rem;
+        max-width: 8rem;
         padding-right: 10rem;
         text-align: center;
-        padding: 10px;
-        font-size: 17px;
+        padding: 3px;
+        font-size: 12px;
 
     }
 
@@ -277,18 +290,20 @@ table {
         background-color: #060c14;
         color: white;
         width: 100px;
+        max-width: 3rem;
         padding-right: 10rem;
         text-align: center;
-        padding: 10px;
-        font-size: 17px;
+        padding: 3px;
+        font-size: 12px;
     }
 
     .td-nume {
         background-color: #ffffff;
-        width: 35rem;
+        min-width: 7rem;
+        max-width: 7rem;
         padding-right: 10rem;
         text-align: start;
-        padding: 10px;
+        padding: 5px;
         font-size: 17px;
 
     }
@@ -296,9 +311,10 @@ table {
     .td-dimensiuni {
         background-color: #ffffff;
         width: 100px;
+        max-width: 3rem;
         padding-right: 10rem;
         text-align: center;
-        padding: 10px;
+        padding: 5px;
         font-size: 17px;
     }
 

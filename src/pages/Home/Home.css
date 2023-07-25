@@ -145,6 +145,10 @@
 @media (max-width:1025px) {
     .home {
         margin-left: 16%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
     }
 
     .tip-montaj {
@@ -152,6 +156,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        margin-left: 1rem;
     }
 
     .montaj-title {
@@ -160,11 +165,11 @@
     }
 
     .montaj-btn {
-        min-width: 50px;
-        padding: 2rem;
+        width: 5rem;
+        padding: 1rem;
         background-color: aquamarine;
         margin-right: 2rem;
-        margin-top: 2rem;
+        margin-top: 1rem;
         border-radius: 10px;
         cursor: pointer;
         text-align: center;
@@ -175,9 +180,10 @@
     }
 
     .select-panou {
-        margin-top: 1rem;
+        margin-top: .4rem;
         height: 2rem;
-        min-width: 20rem;
+        min-width: 19rem;
+        margin-right: 1rem;
 
     }
 
@@ -185,15 +191,16 @@
         margin-top: 1rem;
         padding-left: 0rem;
         padding-right: 0rem;
+        margin-right: 6rem;
     }
 
     .montaj-btn-active {
         text-align: center;
-        min-width: 50px;
-        padding: 2rem;
+        width: 5rem;
+        padding: 1rem;
         background-color: rgb(60, 245, 183);
         margin-right: 2rem;
-        margin-top: 2rem;
+        margin-top: 1rem;
         border-radius: 10px;
         cursor: pointer;
     }
