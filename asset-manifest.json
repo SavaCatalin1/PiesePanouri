@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/SavaCatalin1/PiesePanouri/static/css/main.72a53385.css",
-    "main.js": "/SavaCatalin1/PiesePanouri/static/js/main.11974257.js",
-    "static/js/787.bc4cbcab.chunk.js": "/SavaCatalin1/PiesePanouri/static/js/787.bc4cbcab.chunk.js",
-    "index.html": "/SavaCatalin1/PiesePanouri/index.html",
-    "main.72a53385.css.map": "/SavaCatalin1/PiesePanouri/static/css/main.72a53385.css.map",
-    "main.11974257.js.map": "/SavaCatalin1/PiesePanouri/static/js/main.11974257.js.map",
-    "787.bc4cbcab.chunk.js.map": "/SavaCatalin1/PiesePanouri/static/js/787.bc4cbcab.chunk.js.map"
+    "main.css": "/PiesePanouri/static/css/main.72a53385.css",
+    "main.js": "/PiesePanouri/static/js/main.1c5aa82f.js",
+    "static/js/787.bc4cbcab.chunk.js": "/PiesePanouri/static/js/787.bc4cbcab.chunk.js",
+    "index.html": "/PiesePanouri/index.html",
+    "main.72a53385.css.map": "/PiesePanouri/static/css/main.72a53385.css.map",
+    "main.1c5aa82f.js.map": "/PiesePanouri/static/js/main.1c5aa82f.js.map",
+    "787.bc4cbcab.chunk.js.map": "/PiesePanouri/static/js/787.bc4cbcab.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.72a53385.css",
-    "static/js/main.11974257.js"
+    "static/js/main.1c5aa82f.js"
   ]
 }
