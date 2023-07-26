@@ -48,6 +48,7 @@ function Home() {
                 setRanduri(generateArrays);
                 setRezultat([])
                 setFilled(true)
+                setShowRez(false)
             } else {
                 setRanduri([])
                 setRezultat([])
@@ -78,6 +79,10 @@ function Home() {
     const calcTipCleme = () => {
         let detailss = [];
         let clemanume = ""
+        let clemanume2 = ""
+        let sinanume = ""
+        let suruburinume = ""
+        let caramelenume = ""
         if (Number(panou[2]) === 35) {
             clemanume = "Clema 1"
             detailss.push(clemanume)
@@ -93,6 +98,7 @@ function Home() {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (tipMontaj === 0) {
+            //Plana
             let clemeinterioare = [];
             let nr_panouri = 0;
             let sinarandvect = [];
@@ -106,9 +112,9 @@ function Home() {
                 let sinarandtemp = 2 * Number(fieldValues[i]) * panou[1] + 250
                 sinarandvect.push(sinarandtemp)
                 nr_panouri = nr_panouri + Number(fieldValues[i]);
-                let carameletemp = (sinarandtemp / 1000 + 2).toFixed();
+                let carameletemp = (Math.ceil(sinarandtemp / 1000 + 1)).toFixed();
                 caramele.push(carameletemp)
-                let suruburitemp = 2 * carameletemp + vari + 4;
+                let suruburitemp = 2 * carameletemp;
                 suruburi.push(suruburitemp)
             }
             setClemeInterioare(clemeinterioare)
@@ -133,6 +139,7 @@ function Home() {
 
         }
         else if (tipMontaj === 1) {
+            //Acoperis
             let clememici = [];
             let nr_panouri = 0;
             let sinarandvect = [];
@@ -172,6 +179,7 @@ function Home() {
             calcTipCleme()
         }
         else if (tipMontaj === 2) {
+            //Mini Rail
             let clemeinterioare = [];
             let nr_panouri = 0;
             let sinarandvect = [];
@@ -180,14 +188,19 @@ function Home() {
             let carameletotal = 0;
             let suruburitotal = 0;
             for (let i = 0; i < fieldValues.length; i++) {
+                //cleme interioare minirail
                 let vari = 2 * fieldValues[i] - 2;
                 clemeinterioare.push(vari);
-                let sinarandtemp = 4 * Number(fieldValues[i])
+                //nr minirails
+                let sinarandtemp = 2 * (Number(fieldValues[i]) + 1)
                 sinarandvect.push(sinarandtemp)
+                //nr panouri total
                 nr_panouri = nr_panouri + Number(fieldValues[i]);
+                //nr caramele (?)
                 let carameletemp = (sinarandtemp / 1000 + 1).toFixed();
                 caramele.push(carameletemp)
-                let suruburitemp = 2 * sinarandtemp;
+                //nr suruburi
+                let suruburitemp = 4 * sinarandtemp;
                 suruburi.push(suruburitemp)
             }
             setClemeInterioare(clemeinterioare)
@@ -196,9 +209,9 @@ function Home() {
             setSuruburi(suruburi);
             let clemeexterioare = 4 * nrRanduri;
             let clemeintnrtotal = 0;
+            let sina = 0;
             for (let i = 0; i < clemeinterioare.length; i++) {
                 clemeintnrtotal += clemeinterioare[i];
-
             }
 
             for (let y = 0; y < caramele.length; y++) {
@@ -206,7 +219,11 @@ function Home() {
                 suruburitotal += Number(suruburi[y]);
             }
 
-            let sina = 2 * clemeintnrtotal + clemeexterioare
+            for (let y = 0; y < sinarandvect.length; y++) {
+                sina += Number(sinarandvect[y]);
+            }
+
+
             let calcule = [clemeintnrtotal, clemeexterioare, sina, carameletotal, suruburitotal];
             setRezultat(calcule);
             setShowRez(true);
@@ -270,7 +287,7 @@ function Home() {
                                     <div className='rez-rand'>{tipMontaj === 1 ? "Cleme mici: " + clemeInterioare[index] : "Cleme interioare: " + clemeInterioare[index]}</div>
                                     <div className='rez-rand'>{tipMontaj === 1 ? "Cleme mari: " + clemeInterioare[index] : "Cleme exterioare: 4"}</div>
                                     <div className='rez-rand'>Suruburi: {suruburi[index]}</div>
-                                    <div className='rez-rand'>Caramele: {caramele[index]}</div>
+                                    <div className={tipMontaj === 2 ? "" : 'rez-rand'} >{tipMontaj === 2 ? `` : "Prinderi: " + caramele[index]}</div>
                                 </div>
                             }
                         </div>
