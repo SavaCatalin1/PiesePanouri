@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.297b09b3.css",
-    "main.js": "/static/js/main.0dcf09b4.js",
-    "static/js/787.bc4cbcab.chunk.js": "/static/js/787.bc4cbcab.chunk.js",
-    "index.html": "/index.html",
-    "main.297b09b3.css.map": "/static/css/main.297b09b3.css.map",
-    "main.0dcf09b4.js.map": "/static/js/main.0dcf09b4.js.map",
-    "787.bc4cbcab.chunk.js.map": "/static/js/787.bc4cbcab.chunk.js.map"
+    "main.css": "/PiesePanouri/static/css/main.72a53385.css",
+    "main.js": "/PiesePanouri/static/js/main.1c5aa82f.js",
+    "static/js/787.bc4cbcab.chunk.js": "/PiesePanouri/static/js/787.bc4cbcab.chunk.js",
+    "index.html": "/PiesePanouri/index.html",
+    "main.72a53385.css.map": "/PiesePanouri/static/css/main.72a53385.css.map",
+    "main.1c5aa82f.js.map": "/PiesePanouri/static/js/main.1c5aa82f.js.map",
+    "787.bc4cbcab.chunk.js.map": "/PiesePanouri/static/js/787.bc4cbcab.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.297b09b3.css",
-    "static/js/main.0dcf09b4.js"
+    "static/css/main.72a53385.css",
+    "static/js/main.1c5aa82f.js"
   ]
 }
