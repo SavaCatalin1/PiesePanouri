@@ -75,6 +75,21 @@ function Home() {
         setFieldValues(newFieldValues);
     }
 
+    const calcTipCleme = () => {
+        let detailss = [];
+        let clemanume = ""
+        if (Number(panou[2]) === 35) {
+            clemanume = "Clema 1"
+            detailss.push(clemanume)
+
+        }
+        else if (Number(panou[2]) === 40) {
+            let clemanume = "Clema 2"
+            detailss.push(clemanume)
+        }
+        setDetails(detailss);
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault();
         if (tipMontaj === 0) {
@@ -114,15 +129,7 @@ function Home() {
             let calcule = [clemeintnrtotal, clemeexterioare, sina, carameletotal, suruburitotal];
             setRezultat(calcule);
             setShowRez(true);
-
-            if (Number(panou[2]) === 35) {
-                let clemanume = "R52"
-                setDetails(clemanume);
-            }
-            else {
-                let clemanume = "R53"
-                setDetails(clemanume);
-            }
+            calcTipCleme();
 
         }
         else if (tipMontaj === 1) {
@@ -162,6 +169,7 @@ function Home() {
             let calcule = [clememicinrtotal, clememari, sina, carameletotal, suruburitotal];
             setRezultat(calcule);
             setShowRez(true);
+            calcTipCleme()
         }
         else if (tipMontaj === 2) {
             let clemeinterioare = [];
@@ -202,6 +210,7 @@ function Home() {
             let calcule = [clemeintnrtotal, clemeexterioare, sina, carameletotal, suruburitotal];
             setRezultat(calcule);
             setShowRez(true);
+            calcTipCleme()
         }
     }
 
@@ -214,8 +223,6 @@ function Home() {
             }
         }
     }
-
-    //da
 
     useEffect(() => {
         if (tipMontaj != null && panou.length > 0) {
