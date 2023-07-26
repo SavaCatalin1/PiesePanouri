@@ -2,7 +2,7 @@ import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore/lite';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBfjA5mGeXKSBSykNsQ9j8rQl-l8aTOAew",
+    apiKey: process.env.REACT_APP_FIREBASE_KEY,
     authDomain: "piese-panouri.firebaseapp.com",
     projectId: "piese-panouri",
     storageBucket: "piese-panouri.appspot.com",
