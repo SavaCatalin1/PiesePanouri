@@ -215,6 +215,8 @@ function Home() {
         }
     }
 
+    //da
+
     useEffect(() => {
         if (tipMontaj != null && panou.length > 0) {
             setEnableField(true);
