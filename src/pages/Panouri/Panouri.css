@@ -29,7 +29,7 @@ table {
 .add-btn {
     position: absolute;
     top: 3rem;
-    right: 3rem;
+    right: 7rem;
     padding: 1rem;
     border-radius: 10px;
     cursor: pointer;
@@ -153,6 +153,17 @@ table {
     cursor: pointer;
 }
 
+.td-remove:hover {
+    background-color: gray;
+    color: red;
+    width: 0.5rem;
+    padding-right: 10rem;
+    text-align: center;
+    padding: 10px;
+    font-size: 17px;
+    cursor: pointer;
+}
+
 .butoane {
     display: flex;
     align-items: center;
@@ -176,7 +187,7 @@ table {
 
         padding-right: 0rem;
         text-align: center;
-        margin-right: .4rem;
+        margin-right: 0rem;
     }
 
     .table_header {
@@ -201,7 +212,7 @@ table {
     .add-btn {
         margin-top: -2rem;
         position: relative;
-        margin-left: 7rem;
+        margin-left: 27rem;
         width: 4rem;
         height: 1rem;
         font-size: 12px;
@@ -282,8 +293,8 @@ table {
     }
 
     .th-nume {
-        background-color: #060c14;
-        color: white;
+        background-color: aqua;
+        color: black;
         min-width: 8rem;
         max-width: 8rem;
         padding-right: 10rem;
@@ -294,8 +305,8 @@ table {
     }
 
     .th-dimensiuni {
-        background-color: #060c14;
-        color: white;
+        background-color: aqua;
+        color: black;
         width: 100px;
         max-width: 3rem;
         padding-right: 10rem;
@@ -306,8 +317,8 @@ table {
 
     .td-nume {
         background-color: #ffffff;
-        min-width: 7rem;
-        max-width: 7rem;
+        min-width: 8rem;
+        max-width: 8rem;
         padding-right: 10rem;
         text-align: start;
         padding: 5px;
@@ -326,12 +337,12 @@ table {
     }
 
     .td-remove {
-        background-color: #e8e8e8d1;
+        background-color: #e8e8e811;
         color: red;
-        width: 0.5rem;
-        padding-right: 10rem;
+        width: 0.1rem;
+        padding-right: 1rem;
         text-align: center;
-        padding: 10px;
+        padding: 7px;
         font-size: 17px;
         cursor: pointer;
     }

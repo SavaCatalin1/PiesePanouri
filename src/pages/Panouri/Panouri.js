@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import Sidebar from '../../components/Sidebar/Sidebar'
 import "./Panouri.css"
-import { addDoc, collection, getDocs } from 'firebase/firestore/lite';
+import { addDoc, collection, deleteDoc, doc, getDocs } from 'firebase/firestore/lite';
 import { db } from '../../firebase';
 
 function Panouri() {
@@ -12,6 +12,7 @@ function Panouri() {
     const [lungimePanou, setLungimePanou] = useState()
     const [latimePanou, setLatimePanou] = useState()
     const [grosimePanou, setGrosimePanou] = useState()
+    const [nrPanouri, setNrPanouri] = useState()
 
     const fetchPost = async () => {
 
@@ -20,8 +21,12 @@ function Panouri() {
                 const newData = querySnapshot.docs
                     .map((doc) => ({ ...doc.data(), id: doc.id }));
                 setPanouri(newData);
+                setNrPanouri(newData.length)
+                console.log(nrPanouri)
             })
     }
+
+
 
     const addTodo = async (e) => {
         e.preventDefault();
@@ -37,7 +42,7 @@ function Panouri() {
         } catch (e) {
             console.error("Error adding document: ", e);
         }
-
+        setNrPanouri(prev => prev + 1)
         setIsAdding(false);
     }
 
@@ -50,9 +55,20 @@ function Panouri() {
         }
     }
 
+    const handleDel = async (val) => {
+        try {
+            console.log(val)
+            await deleteDoc(doc(db, "panouri", val))
+            setNrPanouri(prev => prev - 1)
+        } catch (e) {
+            console.error("Error: ", e);
+        }
+    }
+
     useEffect(() => {
         fetchPost()
-    }, [panouri])
+        console.log(panouri)
+    }, [nrPanouri])
 
 
 
@@ -74,16 +90,17 @@ function Panouri() {
                                     <th className='th-dimensiuni'>Grosime</th>
                                 </tr>
                             </thead>
-
-                            {panouri.map((panou) => (
-                                <tr className="table_row">
-                                    <td className='td-nume'>{panou.nume}</td>
-                                    <td className='td-dimensiuni'>{panou.lungime}</td>
-                                    <td className='td-dimensiuni'>{panou.latime}</td>
-                                    <td className='td-dimensiuni'>{panou.grosime}</td>
-                                    <td className='td-remove'>X</td>
-                                </tr>
-                            ))}
+                            <tbody>
+                                {panouri.map((panou, index) => (
+                                    <tr className="table_row" key={index}>
+                                        <td className='td-nume'>{panou.nume}</td>
+                                        <td className='td-dimensiuni'>{panou.lungime}</td>
+                                        <td className='td-dimensiuni'>{panou.latime}</td>
+                                        <td className='td-dimensiuni'>{panou.grosime}</td>
+                                        <td className='td-remove' onClick={() => handleDel(panouri[index].id)}>X</td>
+                                    </tr>
+                                ))}
+                            </tbody>
                         </table>
 
                     </div>

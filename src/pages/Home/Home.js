@@ -25,10 +25,10 @@ function Home() {
     const [caramele, setCaramele] = useState([]);
     const [suruburi, setSuruburi] = useState([]);
     const [error, setError] = useState("");
+    const [details, setDetails] = useState([])
 
 
     const fetchPost = async () => {
-
         await getDocs(collection(db, "panouri"))
             .then((querySnapshot) => {
                 const newData = querySnapshot.docs
@@ -36,8 +36,6 @@ function Home() {
                 setPanouri(newData);
             })
     }
-
-
 
     const onChangeRanduri = (e) => {
         const nrRanduri = parseInt(e.target.value, 10) || 0;
@@ -116,6 +114,15 @@ function Home() {
             let calcule = [clemeintnrtotal, clemeexterioare, sina, carameletotal, suruburitotal];
             setRezultat(calcule);
             setShowRez(true);
+
+            if (Number(panou[2]) === 35) {
+                let clemanume = "R52"
+                setDetails(clemanume);
+            }
+            else {
+                let clemanume = "R53"
+                setDetails(clemanume);
+            }
 
         }
         else if (tipMontaj === 1) {
@@ -217,6 +224,7 @@ function Home() {
 
     useEffect(() => {
         fetchPost()
+        console.log(panouri)
     }, [])
 
 
@@ -249,7 +257,7 @@ function Home() {
                             <input className='randuri-value' onChange={e => onChangeValori(index, e)} value={fieldValues[index]}></input>
                             {showRez &&
                                 <div className='rez-flex'>
-                                    <div className='rez-rand'>{tipMontaj === 2 ? "Sina: " + sinaRand[index] + " buc" : "Sina: " + sinaRand[index] / 1000 + " m"}</div>
+                                    <div className='rez-rand'>{tipMontaj === 2 ? `Sina: ` + sinaRand[index] + " buc" : "Sina: " + sinaRand[index] / 1000 + " m"}</div>
                                     <div className='rez-rand'>{tipMontaj === 1 ? "Cleme mici: " + clemeInterioare[index] : "Cleme interioare: " + clemeInterioare[index]}</div>
                                     <div className='rez-rand'>{tipMontaj === 1 ? "Cleme mari: " + clemeInterioare[index] : "Cleme exterioare: 4"}</div>
                                     <div className='rez-rand'>Suruburi: {suruburi[index]}</div>
@@ -264,8 +272,9 @@ function Home() {
                             <button className='calc-btn' type='submit'>Calculeaza</button>
                         </div>}
                     {showRez ?
-                        <Rezultate tipMontaj={tipMontaj} rezultat={rezultat} />
-                        : ""}
+                        <div className='rez-flex'>
+                            <Rezultate tipMontaj={tipMontaj} rezultat={rezultat} details={details} />
+                        </div> : ""}
                 </form>
             </div >
         </div >
