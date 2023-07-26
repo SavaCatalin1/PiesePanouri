@@ -1,7 +1,6 @@
 {
   "name": "piesepanouri",
   "version": "0.1.0",
-  "homepage": "https://SavaCatalin1.github.io/PiesePanouri",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.1",
