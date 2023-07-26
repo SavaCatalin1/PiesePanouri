@@ -23,7 +23,7 @@ export default function Rezultate({ tipMontaj, rezultat, details }) {
 
             <div className={tipMontaj === 2 ? "" : 'rezultate-row'}> {tipMontaj === 2 && ""}{tipMontaj === 1 && <span><b>Prinderi:</b> {rezultat[3]} buc {detailsToggle ? details[3] : ""}</span>}{tipMontaj === 0 && <span><b>Prinderi:</b> {rezultat[3]} buc {detailsToggle ? details[3] : ""}</span>}</div>
 
-            <div className='rezultate-row'><b>Suruburi:</b> {tipMontaj === 2 && <span>{rezultat[4]} buc {detailsToggle ? details[4] : ""}</span>}{tipMontaj === 1 && <span>{rezultat[4]} buc {detailsToggle ? details[4] : ""}</span>}{tipMontaj === 0 && <span>{rezultat[4]} buc {detailsToggle ? details[4] : ""}</span>}</div>
+            <div className='rezultate-row'> {tipMontaj === 2 && <span><b>Suruburi: </b>{rezultat[4]} buc {detailsToggle ? details[4] : ""}</span>}{tipMontaj === 0 && <span><b>Suruburi: </b>{rezultat[4]} buc {detailsToggle ? details[4] : ""}</span>}</div>
 
             <button className="details-btn" onClick={handleDetails}>{detailsToggle ? "Ascunde detalii" : "Vezi detalii"}</button>
 

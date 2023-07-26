@@ -7,7 +7,7 @@ import Panouri from './panouri/Panouri';
 import Detaliipanou from './detaliipanou/Detaliipanou';
 import Rezultate from './rezultate/Rezultate';
 
-const tipmontaje = ["Plana", "Acoperis", "Mini Rail"]
+const tipmontaje = ["Standard", "Est-Vest", "Mini Rail"]
 
 function Home() {
     const [panouri, setPanouri] = useState([])
@@ -79,26 +79,62 @@ function Home() {
     const calcTipCleme = () => {
         let detailss = [];
         let clemanume = ""
-        let clemanume2 = ""
+        let clemanumeint = ""
         let sinanume = ""
         let suruburinume = ""
         let caramelenume = ""
+        //Clema interioara details
+        clemanumeint = "interioara"
+        detailss.push(clemanumeint)
+        //Clema exterioara details
         if (Number(panou[2]) === 35) {
-            clemanume = "Clema 1"
+            clemanume = "Clema 35"
             detailss.push(clemanume)
-
         }
         else if (Number(panou[2]) === 40) {
-            let clemanume = "Clema 2"
+            let clemanume = "Clema 40"
             detailss.push(clemanume)
         }
+        else if (Number(panou[2]) === 30) {
+            let clemanume = "Clema 30"
+            detailss.push(clemanume)
+        }
+        else {
+            let clemanume = "Alta clema"
+            detailss.push(clemanume)
+        }
+        //Sina details
+        if (tipMontaj === 2) {
+            sinanume = "Mini Rail"
+            detailss.push(sinanume)
+        }
+        else if (tipMontaj === 1) {
+            sinanume = "R60"
+            detailss.push(sinanume)
+        }
+        else if (tipMontaj === 0) {
+            sinanume = "R52"
+            detailss.push(sinanume)
+        }
+        //Prinderi details
+        if (tipMontaj === 1) {
+            caramelenume = "papucei (pt bolovani)"
+            detailss.push(caramelenume)
+        }
+
+        //Suruburi details
+        //AICI LUCREZ
+        //ADD TIP NATURA ACOPERIS
+        //HOOK - TARTAN
+        //CARAMELE - TABLA
+        //TABLA FATUITA - CLEMA FATUITA
         setDetails(detailss);
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
         if (tipMontaj === 0) {
-            //Plana
+            //Standard
             let clemeinterioare = [];
             let nr_panouri = 0;
             let sinarandvect = [];
@@ -139,7 +175,7 @@ function Home() {
 
         }
         else if (tipMontaj === 1) {
-            //Acoperis
+            //Est-Vest
             let clememici = [];
             let nr_panouri = 0;
             let sinarandvect = [];
@@ -154,7 +190,8 @@ function Home() {
                 let sinarandtemp = 2 * Number(fieldValues[i]) * panou[1] + 250
                 sinarandvect.push(sinarandtemp)
                 nr_panouri = nr_panouri + Number(fieldValues[i]);
-                let carameletemp = (sinarandtemp / 1000 + 1).toFixed();
+                let carameletemp = (Math.ceil(sinarandtemp / 5000) * 4).toFixed()
+                //let carameletemp = (Math.ceil(sinarandtemp / 800 + 1)).toFixed();
                 caramele.push(carameletemp)
                 let suruburitemp = 2 * carameletemp + 2 * vari;
                 suruburi.push(suruburitemp)
@@ -286,8 +323,8 @@ function Home() {
                                     <div className='rez-rand'>{tipMontaj === 2 ? `Sina: ` + sinaRand[index] + " buc" : "Sina: " + sinaRand[index] / 1000 + " m"}</div>
                                     <div className='rez-rand'>{tipMontaj === 1 ? "Cleme mici: " + clemeInterioare[index] : "Cleme interioare: " + clemeInterioare[index]}</div>
                                     <div className='rez-rand'>{tipMontaj === 1 ? "Cleme mari: " + clemeInterioare[index] : "Cleme exterioare: 4"}</div>
-                                    <div className='rez-rand'>Suruburi: {suruburi[index]}</div>
-                                    <div className={tipMontaj === 2 ? "" : 'rez-rand'} >{tipMontaj === 2 ? `` : "Prinderi: " + caramele[index]}</div>
+                                    <div className={tipMontaj === 1 ? "" : 'rez-rand'}>{tipMontaj === 1 ? "" : "Suruburi: " + suruburi[index]}</div>
+                                    <div className={tipMontaj === 2 ? "" : 'rez-rand'} >{tipMontaj === 2 ? "" : "Prinderi: " + caramele[index]}</div>
                                 </div>
                             }
                         </div>
