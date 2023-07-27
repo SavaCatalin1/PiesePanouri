@@ -90,61 +90,73 @@ function Home() {
         let suruburinume = ""
         let caramelenume = ""
         //Clema interioara details
-        clemanumeint = "interioara"
+        clemanumeint = " - Clema intermediara"
         detailss.push(clemanumeint)
         //Clema exterioara details
         if (Number(panou[2]) === 35) {
-            clemanume = "Clema 35"
+            clemanume = " - Clema capat 35mm"
             detailss.push(clemanume)
         }
         else if (Number(panou[2]) === 40) {
-            let clemanume = "Clema 40"
+            let clemanume = " - Clema capat 40mm"
             detailss.push(clemanume)
         }
         else if (Number(panou[2]) === 30) {
-            let clemanume = "Clema 30"
+            let clemanume = " - Clema capat 30mm"
             detailss.push(clemanume)
         }
         else {
-            let clemanume = "Alta clema"
+            let clemanume = "-"
             detailss.push(clemanume)
         }
         //Sina details
         if (tipMontaj === 2) {
-            sinanume = "Mini Rail"
+            sinanume = " - Mini Rail"
             detailss.push(sinanume)
         }
         else if (tipMontaj === 1) {
-            sinanume = "R60"
+            sinanume = " - R60"
             detailss.push(sinanume)
         }
         else if (tipMontaj === 0) {
-            sinanume = "R52"
+            sinanume = " - R52"
             detailss.push(sinanume)
         }
         //Prinderi details
         if (tipMontaj === 1) {
-            caramelenume = "papucei (pt bolovani)"
+            caramelenume = " - Tavita aluminiu"
             detailss.push(caramelenume)
         }
         if (tipMontaj === 0 && acoperis === 0) {
-            caramelenume = "Hook"
+            caramelenume = " - Carlig montaj tigla (hook)"
             detailss.push(caramelenume)
         }
         else if (tipMontaj === 0 && acoperis === 1) {
-            caramelenume = "Caramele"
+            caramelenume = " - Clema rapida prindere sina (caramele)"
             detailss.push(caramelenume)
         }
         else if (tipMontaj === 0 && acoperis === 2) {
-            caramelenume = "Clema Faltuita"
+            caramelenume = " - Suport fixare tabla faltuita + coltar 60x30 + surub 10mm cu piulita"
             detailss.push(caramelenume)
         }
 
         //Suruburi details
 
-        //HOOK - TARTAN
-        //CARAMELE - TABLA
-        //TABLA FATUITA - CLEMA FATUITA
+        if (tipMontaj === 0) {
+            if (acoperis === 0) {
+                suruburinume = "Surub autoforant 6,3x80 cu saiba"
+            }
+            else if (acoperis === 1) {
+                suruburinume = "Surub 60x40"
+            }
+            else if (acoperis === 2) {
+                suruburinume = "Surub 10mm cu piulita"
+            }
+        }
+        else if (tipMontaj === 2) {
+            suruburinume = "Surub 60x30"
+        }
+        detailss.push(suruburinume)
         setDetails(detailss);
     }
 
