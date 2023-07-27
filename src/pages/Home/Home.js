@@ -31,8 +31,8 @@ function Home() {
     const [error, setError] = useState("");
     const [details, setDetails] = useState([])
     const [acoperis, setAcoperis] = useState();
-    const [montajDropdown, setMontajDropdown] = useState(false)
-    const [montajDropdown2, setMontajDropdown2] = useState(false)
+    const [montajDropdown, setMontajDropdown] = useState(true)
+    const [montajDropdown2, setMontajDropdown2] = useState(true)
 
     const fetchPost = async () => {
         await getDocs(collection(db, "panouri"))
@@ -307,6 +307,8 @@ function Home() {
     const toggle2 = () => {
         if (montajDropdown2 === true) {
             setMontajDropdown2(false)
+            setMontajDropdown(false)
+            setShowRez(false)
         }
         else {
             setMontajDropdown2(true)
