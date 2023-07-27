@@ -37,6 +37,7 @@ body {
     text-align: center;
     border: 2px solid white;
     font-weight: 600;
+    text-shadow: 1px 1px 1px black;
 }
 
 .montaj-btn:hover {
@@ -71,6 +72,7 @@ body {
     cursor: pointer;
     border: 2px solid white;
     font-weight: 600;
+    text-shadow: 1px 1px 1px white;
 }
 
 .select-randuri {
@@ -116,6 +118,7 @@ body {
     color: white;
     font-size: 16px;
     border: 2px solid white;
+    text-shadow: 1px 1px 1px black;
 }
 
 .calc-btn:hover {
@@ -188,6 +191,7 @@ body {
     background-color: #005aab;
     color: white;
     border: 1px solid white;
+    text-shadow: 1px 1px 1px black;
 }
 
 .details-btn:hover {
@@ -201,6 +205,7 @@ body {
     justify-content: center;
     display: flex;
     border: 2px solid white;
+
 }
 
 .drop-btn:hover {

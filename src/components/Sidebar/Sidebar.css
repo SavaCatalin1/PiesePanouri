@@ -22,6 +22,7 @@ li {
     cursor: pointer;
     font-weight: 700;
     border: 2px solid white;
+    text-shadow: 1px 1px 1px black;
 }
 
 li:hover {
