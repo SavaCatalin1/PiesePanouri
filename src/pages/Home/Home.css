@@ -364,7 +364,7 @@
     .tip-montaj {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
         justify-content: center;
         margin-left: 1rem;
     }
@@ -372,10 +372,9 @@
     .tip-montaj2 {
         display: flex;
         flex-direction: column;
-        align-items: center;
         justify-content: center;
         margin-left: 1rem;
-        align-items: flex-start;
+        align-items: center;
     }
 
     .montaj-title {
