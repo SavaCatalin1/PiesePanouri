@@ -243,7 +243,7 @@ body {
     .montaj-btn {
         width: 10rem;
         padding: 1rem;
-        background-color: aquamarine;
+        background-color: #005aab;
         margin-right: 2rem;
         margin-top: 1rem;
         border-radius: 10px;
@@ -252,7 +252,7 @@ body {
     }
 
     .montaj-btn:hover {
-        background-color: rgba(127, 255, 212, 0.305);
+        background-color: #005bab72;
     }
 
     .select-panou {
@@ -275,7 +275,7 @@ body {
         text-align: center;
         width: 10rem;
         padding: 1rem;
-        background-color: rgb(60, 245, 183);
+        background-color: #fdb813;
         margin-right: 2rem;
         margin-top: 1rem;
         border-radius: 10px;
@@ -321,11 +321,11 @@ body {
         cursor: pointer;
         font-size: larger;
         margin-right: .5rem;
-        background-color: rgba(127, 255, 212, 0.53);
+        background-color: #005aab;
     }
 
     .calc-btn:hover {
-        background-color: aqua;
+        background-color: #014b8d;
         color: black;
     }
 
@@ -344,7 +344,7 @@ body {
 
     .rezultate-body {
         margin-top: 1rem;
-        background-color: aquamarine;
+        background-color: #fdb813;
         width: 100%;
         border-radius: 10px;
         margin: auto;
@@ -358,7 +358,7 @@ body {
 
     .rez-rand {
         margin-top: 1rem;
-        background-color: aqua;
+        background-color: #fdb813;
         margin-left: 1rem;
         width: 6rem;
         height: 3rem;
@@ -418,7 +418,7 @@ body {
     .montaj-btn {
         width: 5rem;
         padding: 1rem;
-        background-color: aquamarine;
+        background-color: #005aab;
         margin-right: 2rem;
         margin-top: 1rem;
         border-radius: 10px;
@@ -427,7 +427,7 @@ body {
     }
 
     .montaj-btn:hover {
-        background-color: rgba(127, 255, 212, 0.305);
+        background-color: #005bab72;
     }
 
     .select-panou {
@@ -450,7 +450,7 @@ body {
         text-align: center;
         width: 5rem;
         padding: 1rem;
-        background-color: rgb(60, 245, 183);
+        background-color: #fdb813;
         margin-right: 2rem;
         margin-top: 1rem;
         border-radius: 10px;
@@ -495,11 +495,11 @@ body {
         cursor: pointer;
         font-size: larger;
         margin-right: .5rem;
-        background-color: rgba(127, 255, 212, 0.53);
+        background-color: #005aab;
     }
 
     .calc-btn:hover {
-        background-color: aqua;
+        background-color: #014b8d;
         color: black;
     }
 
@@ -518,12 +518,13 @@ body {
 
     .rezultate-body {
         margin-top: 1rem;
-        background-color: aquamarine;
+        background-color: #fdb813;
         width: 100%;
         border-radius: 10px;
         margin: auto;
         text-align: center;
         margin-bottom: 1rem;
+        margin-left: .5rem;
     }
 
     .rezultate-row {
@@ -531,12 +532,17 @@ body {
     }
 
     .rez-rand {
+        display: flex;
         margin-top: 1rem;
-        background-color: aqua;
+        background-color: #fdb813;
         margin-left: .3rem;
         width: 3.5rem;
         text-align: center;
         font-size: 12px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+
     }
 
     .rez-flex {

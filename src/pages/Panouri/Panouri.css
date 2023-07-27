@@ -205,7 +205,7 @@ table {
 
     .home {
 
-        margin-left: 0%;
+        margin-left: .2rem;
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -257,7 +257,7 @@ table {
     }
 
     .add-btn:hover {
-        background-color: rgba(0, 255, 255, 0.2);
+        background-color: #005bab96;
         color: black;
     }
 
@@ -270,13 +270,13 @@ table {
         border-radius: 10px;
         cursor: pointer;
         margin-top: 1rem;
-        background-color: aqua;
+        background-color: #005aab;
         border: 2px solid;
         margin-left: 2rem;
     }
 
     .x-btn:hover {
-        background-color: rgba(0, 255, 255, 0.2);
+        background-color: #005bab96;
     }
 
     .inputs-body {
@@ -314,17 +314,17 @@ table {
         border-radius: 10px;
         cursor: pointer;
         margin-top: 1rem;
-        background-color: aqua;
+        background-color: #005aab;
     }
 
     .add-btn2:hover {
-        background-color: rgba(0, 255, 255, 0.2);
+        background-color: #005bab96;
         color: black;
     }
 
     .th-nume {
-        background-color: aqua;
-        color: black;
+        background-color: #005aab;
+        color: white;
         min-width: 8rem;
         max-width: 8rem;
         padding-right: 10rem;
@@ -335,8 +335,8 @@ table {
     }
 
     .th-dimensiuni {
-        background-color: aqua;
-        color: black;
+        background-color: #005aab;
+        color: white;
         width: 100px;
         max-width: 3rem;
         padding-right: 10rem;
@@ -367,8 +367,8 @@ table {
     }
 
     .td-remove {
-        background-color: #e8e8e811;
-        color: red;
+        background-color: #fdb814;
+        color: white;
         width: 0.1rem;
         padding-right: 1rem;
         text-align: center;
@@ -384,5 +384,208 @@ table {
         margin-left: 3rem;
     }
 
+    .adding-container {
+        background-color: #fdb814;
+        width: 100%;
+        display: flex;
+        border-radius: 2rem;
+        margin: auto;
+        padding-bottom: 1rem;
+        margin-top: 3.5rem;
+    }
+
+}
+
+@media (max-width:1280px) and (min-width:1025px) {
+
+    .home {
+
+        margin-left: 0rem;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    table {
+
+        padding-right: 0rem;
+        text-align: center;
+        margin-right: 0rem;
+    }
+
+    .table_header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .table_row {
+        background-color: rgba(128, 128, 128, 0.168);
+    }
+
+    table {
+        margin-top: 2rem;
+    }
+
+    .table_body {
+        display: flex;
+
+    }
+
+    .add-btn {
+        position: absolute;
+        top: 3rem;
+        right: 4rem;
+        padding: 1rem 2rem;
+        border-radius: 10px;
+        cursor: pointer;
+        background-color: #005aab;
+        font-weight: 600;
+        color: white;
+        border: 2px solid
+    }
+
+    .add-btn:hover {
+        background-color: #005bab96;
+        color: black;
+    }
+
+    .x-btn {
+        display: flex;
+        align-items: center;
+        width: .5rem;
+        padding: 1rem;
+        height: .2rem;
+        border-radius: 10px;
+        cursor: pointer;
+        margin-top: 1rem;
+        background-color: #005aab;
+        border: 2px solid;
+        margin-left: 2rem;
+    }
+
+    .x-btn:hover {
+        background-color: #005bab96;
+    }
+
+    .inputs-body {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        margin-top: 4rem;
+        margin-left: 2rem;
+    }
+
+    .input-value {
+        width: 20rem;
+
+    }
+
+    .input-value2 {
+        width: 6rem;
+        text-align: center;
+    }
+
+    .input-flex {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .input-name {
+        width: 12rem;
+    }
+
+    .add-btn2 {
+        width: 6rem;
+        padding: 1rem;
+        border-radius: 10px;
+        cursor: pointer;
+        margin-top: 1rem;
+        background-color: #005aab;
+    }
+
+    .add-btn2:hover {
+        background-color: #005bab96;
+        color: black;
+    }
+
+    .th-nume {
+        background-color: #005aab;
+        color: white;
+        min-width: 19rem;
+        max-width: 19rem;
+        padding-right: 10rem;
+        text-align: center;
+        padding: 3px;
+        font-size: 12px;
+
+    }
+
+    .th-dimensiuni {
+        background-color: #005aab;
+        color: white;
+        width: 5rem;
+        max-width: 5rem;
+        padding-right: 10rem;
+        text-align: center;
+        padding: 3px;
+        font-size: 12px;
+    }
+
+    .td-nume {
+        background-color: #ffffff;
+        min-width: 8rem;
+        max-width: 8rem;
+        padding-right: 10rem;
+        text-align: start;
+        padding: 5px;
+        font-size: 17px;
+
+    }
+
+    .td-dimensiuni {
+        background-color: #ffffff;
+        width: 100px;
+        max-width: 3rem;
+        padding-right: 10rem;
+        text-align: center;
+        padding: 5px;
+        font-size: 17px;
+    }
+
+    .td-remove {
+        background-color: #fdb814;
+        color: white;
+        width: 0.1rem;
+        padding-right: 1rem;
+        text-align: center;
+        padding: 7px;
+        font-size: 17px;
+        cursor: pointer;
+    }
+
+    .butoane {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 3rem;
+    }
+
+    .adding-container {
+        background-color: #fdb814;
+        width: 70%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 2rem;
+        margin: auto;
+        padding-bottom: 1rem;
+        margin-top: 2rem;
+        margin-right: 7rem;
+    }
 
 }
