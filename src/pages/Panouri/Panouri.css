@@ -30,16 +30,18 @@ table {
     position: absolute;
     top: 3rem;
     right: 7rem;
-    padding: 1rem;
+    padding: 1rem 2rem;
     border-radius: 10px;
     cursor: pointer;
-    background-color: aqua;
-    font-weight: 500;
+    background-color: #005aab;
+    font-weight: 600;
+    color: white;
+    border: 2px solid
 }
 
 .add-btn:hover {
-    background-color: rgba(0, 255, 255, 0.2);
-    color: black;
+    background-color: #005bab96;
+    color: white;
 }
 
 .x-btn {
@@ -51,13 +53,15 @@ table {
     border-radius: 10px;
     cursor: pointer;
     margin-top: 1rem;
-    background-color: aqua;
-    border: 2px solid;
+    background-color: #005aab;
+    font-weight: 600;
+    color: white;
+    border: 2px solid white;
     margin-left: 2rem;
 }
 
 .x-btn:hover {
-    background-color: rgba(0, 255, 255, 0.2);
+    background-color: #005bab96;
 }
 
 .inputs-body {
@@ -70,12 +74,16 @@ table {
 
 .input-value {
     width: 30rem;
-
+    border: 2px solid white;
+    font-size: 14px;
+    font-weight: 500;
 }
 
 .input-value2 {
     width: 5rem;
     text-align: center;
+    border: 2px solid white;
+    font-size: 14px;
 }
 
 .input-flex {
@@ -85,7 +93,7 @@ table {
 
 .input-name {
     width: 8.5rem;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .add-btn2 {
@@ -94,33 +102,41 @@ table {
     border-radius: 10px;
     cursor: pointer;
     margin-top: 1rem;
-    background-color: aqua;
+    background-color: #005aab;
+    font-weight: 600;
+    color: white;
+    border: 2px solid white;
 }
 
 .add-btn2:hover {
-    background-color: rgba(0, 255, 255, 0.2);
-    color: black;
+    background-color: #005bab96;
+    color: white;
 }
 
 .th-nume {
-    background-color: aqua;
+    background-color: #005aab;
     color: black;
     min-width: 35rem;
     padding-right: 10rem;
     text-align: center;
     padding: 10px;
     font-size: 17px;
-
+    color: white;
+    border-top-left-radius: 1rem;
 }
 
 .th-dimensiuni {
-    background-color: aqua;
-    color: black;
+    background-color: #005aab;
+    color: white;
     width: 100px;
     padding-right: 10rem;
     text-align: center;
     padding: .5rem;
     font-size: 17px;
+}
+
+.th-dimensiuni:nth-child(4) {
+    border-top-right-radius: 1rem;
 }
 
 .td-nume {
@@ -130,7 +146,7 @@ table {
     text-align: start;
     padding: 10px;
     font-size: 17px;
-
+    font-weight: 500;
 }
 
 .td-dimensiuni {
@@ -143,25 +159,29 @@ table {
 }
 
 .td-remove {
-    background-color: #e8e8e8d1;
-    color: red;
+    background-color: #fdb814;
+    color: white;
     width: 0.5rem;
     padding-right: 10rem;
     text-align: center;
     padding: 10px;
     font-size: 17px;
     cursor: pointer;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    font-weight: 500;
 }
 
 .td-remove:hover {
-    background-color: gray;
-    color: red;
+    background-color: #fdb7148b;
+    color: white;
     width: 0.5rem;
     padding-right: 10rem;
     text-align: center;
     padding: 10px;
     font-size: 17px;
     cursor: pointer;
+
 }
 
 .butoane {
@@ -169,6 +189,16 @@ table {
     align-items: center;
     justify-content: center;
     margin-left: 3rem;
+}
+
+.adding-container {
+    background-color: #fdb814;
+    width: 60%;
+    display: flex;
+    border-radius: 2rem;
+    margin: auto;
+    padding-bottom: 1rem;
+    margin-top: 1rem
 }
 
 @media (max-width:1025px) {

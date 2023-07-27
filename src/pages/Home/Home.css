@@ -1,5 +1,10 @@
 .home {
     margin-left: 16%;
+
+}
+
+body {
+    background-color: rgba(128, 128, 128, 0.114);
 }
 
 .tip-montaj {
@@ -17,52 +22,65 @@
 .montaj-title {
     margin-top: 3rem;
     padding-right: 2rem;
+    font-weight: 500;
 }
 
 .montaj-btn {
     min-width: 50px;
     padding: 2rem;
-    background-color: aquamarine;
+    background-color: #005aab;
+    color: white;
     margin-right: 2rem;
     margin-top: 2rem;
     border-radius: 10px;
     cursor: pointer;
     text-align: center;
+    border: 2px solid white;
+    font-weight: 600;
 }
 
 .montaj-btn:hover {
-    background-color: rgba(127, 255, 212, 0.305);
+    background-color: #005bab72;
 }
 
 .select-panou {
     margin-top: 3rem;
     height: 2rem;
     min-width: 30rem;
+    border: 2px solid;
+    font-weight: 600;
 }
 
 .detaliu-panou {
     margin-top: 3rem;
     padding-left: 1rem;
     padding-right: 4rem;
+    color: #005aab;
+    font-weight: 600;
 }
 
 .montaj-btn-active {
     text-align: center;
     min-width: 50px;
     padding: 2rem;
-    background-color: rgb(60, 245, 183);
+    background-color: #fdb813;
+    color: black;
     margin-right: 2rem;
     margin-top: 2rem;
     border-radius: 10px;
     cursor: pointer;
+    border: 2px solid white;
+    font-weight: 600;
 }
 
 .select-randuri {
     margin-top: 3rem;
     height: 1rem;
-    width: 3rem;
+    width: 3.2rem;
     text-align: center;
-
+    border: 2px solid;
+    border-radius: 1rem;
+    font-weight: 600;
 }
 
 .nr-randuri {
@@ -75,6 +93,7 @@
     margin-top: 1rem;
     padding-right: 1rem;
     width: 15rem;
+    font-weight: 400;
 }
 
 .randuri-value {
@@ -82,19 +101,25 @@
     height: 1rem;
     width: 3rem;
     text-align: center;
+    border: 2px solid;
+    border-radius: 1rem;
+    font-weight: 600;
 }
 
 .calc-btn {
     position: relative;
     margin-top: 2rem;
-    padding: 1rem;
+    padding: 1rem 3rem;
     border-radius: 10px;
     cursor: pointer;
+    background-color: #005aab;
+    color: white;
+    font-size: 16px;
+    border: 2px solid white;
 }
 
 .calc-btn:hover {
-    background-color: grey;
-    color: white;
+    background-color: #014b8d;
 }
 
 .btn-randuri {
@@ -112,12 +137,14 @@
 
 .rezultate-body {
     margin-top: 1rem;
-    background-color: aquamarine;
+    background-color: #fdb813;
     width: 30%;
     border-radius: 10px;
     margin: auto;
     text-align: center;
     margin-bottom: 1rem;
+    font-size: 1rem;
+    border: 2px solid white;
 }
 
 .rezultate-row {
@@ -126,10 +153,13 @@
 
 .rez-rand {
     margin-top: 1rem;
-    background-color: aqua;
-    margin-left: 2rem;
-    width: 9rem;
+    background-color: #fdb813;
+    margin-left: 1.5rem;
+    width: 10rem;
     text-align: center;
+    border-radius: 1rem;
+    font-weight: 500;
+    border: 2px solid white;
 }
 
 .rez-flex {
@@ -155,24 +185,27 @@
     min-width: 20rem;
     max-width: 20rem;
     cursor: pointer;
+    background-color: #005aab;
+    color: white;
+    border: 1px solid white;
 }
 
 .details-btn:hover {
-    background-color: rgba(128, 128, 128, 0.197);
+    background-color: #014b8d;
 }
 
 .drop-btn {
-    background-color: rgb(207, 212, 218);
+    background-color: #fdb813;
     border-radius: 1rem;
     cursor: pointer;
     justify-content: center;
     display: flex;
+    border: 2px solid white;
 }
 
 .drop-btn:hover {
-    background-color: rgba(240, 248, 255, 0.222);
+    color: white;
 }
-
 
 @media (max-width:1280px) and (min-width:1025px) {
     .home {

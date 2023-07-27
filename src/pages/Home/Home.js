@@ -144,17 +144,17 @@ function Home() {
 
         if (tipMontaj === 0) {
             if (acoperis === 0) {
-                suruburinume = "Surub autoforant 6,3x80 cu saiba"
+                suruburinume = " - Surub autoforant 6,3x80 cu saiba"
             }
             else if (acoperis === 1) {
-                suruburinume = "Surub 60x40"
+                suruburinume = " - Surub 60x40"
             }
             else if (acoperis === 2) {
-                suruburinume = "Surub 10mm cu piulita"
+                suruburinume = " - Surub 10mm cu piulita"
             }
         }
         else if (tipMontaj === 2) {
-            suruburinume = "Surub 60x30"
+            suruburinume = " - Surub 60x30"
         }
         detailss.push(suruburinume)
         setDetails(detailss);

@@ -106,7 +106,7 @@ function Panouri() {
                     </div>
                 }
                 {isAdding === true &&
-                    <div>
+                    <div className='adding-container'>
 
                         <div className='inputs-body'>
                             <div className='input-flex'>

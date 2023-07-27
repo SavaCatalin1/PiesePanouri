@@ -3,6 +3,7 @@ import "./Sidebar.css"
 import { Link } from 'react-router-dom'
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
+import logo from '../../ATI LOGO.png'
 
 function Sidebar() {
     const [toggled, setToggled] = useState(false);
@@ -24,6 +25,7 @@ function Sidebar() {
                     <Link to="/" style={{ textDecoration: 'none' }} > <li>Home</li></Link>
                     <Link to="/panouri" style={{ textDecoration: 'none' }}><li>Panouri</li></Link>
                 </ul>
+                <img src={logo} className="logo"></img>
             </div >
         </>
     )
