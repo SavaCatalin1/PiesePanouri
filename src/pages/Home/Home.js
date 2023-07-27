@@ -6,8 +6,12 @@ import { db } from '../../firebase';
 import Panouri from './panouri/Panouri';
 import Detaliipanou from './detaliipanou/Detaliipanou';
 import Rezultate from './rezultate/Rezultate';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import ArrowRightIcon from '@mui/icons-material/ArrowRight';
+import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
 
 const tipmontaje = ["Standard", "Est-Vest", "Mini Rail"]
+const naturaacoperis = ["Tigla", "Tabla", "Faltuita"]
 
 function Home() {
     const [panouri, setPanouri] = useState([])
@@ -26,7 +30,9 @@ function Home() {
     const [suruburi, setSuruburi] = useState([]);
     const [error, setError] = useState("");
     const [details, setDetails] = useState([])
-
+    const [acoperis, setAcoperis] = useState();
+    const [montajDropdown, setMontajDropdown] = useState(false)
+    const [montajDropdown2, setMontajDropdown2] = useState(false)
 
     const fetchPost = async () => {
         await getDocs(collection(db, "panouri"))
@@ -121,10 +127,21 @@ function Home() {
             caramelenume = "papucei (pt bolovani)"
             detailss.push(caramelenume)
         }
+        if (tipMontaj === 0 && acoperis === 0) {
+            caramelenume = "Hook"
+            detailss.push(caramelenume)
+        }
+        else if (tipMontaj === 0 && acoperis === 1) {
+            caramelenume = "Caramele"
+            detailss.push(caramelenume)
+        }
+        else if (tipMontaj === 0 && acoperis === 2) {
+            caramelenume = "Clema Faltuita"
+            detailss.push(caramelenume)
+        }
 
         //Suruburi details
-        //AICI LUCREZ
-        //ADD TIP NATURA ACOPERIS
+
         //HOOK - TARTAN
         //CARAMELE - TABLA
         //TABLA FATUITA - CLEMA FATUITA
@@ -278,6 +295,24 @@ function Home() {
         }
     }
 
+    const toggle = () => {
+        if (montajDropdown === true) {
+            setMontajDropdown(false)
+        }
+        else {
+            setMontajDropdown(true)
+        }
+    }
+
+    const toggle2 = () => {
+        if (montajDropdown2 === true) {
+            setMontajDropdown2(false)
+        }
+        else {
+            setMontajDropdown2(true)
+        }
+    }
+
     useEffect(() => {
         if (tipMontaj != null && panou.length > 0) {
             setEnableField(true);
@@ -296,11 +331,18 @@ function Home() {
             <Sidebar />
             <div className='home'>
                 <div className='tip-montaj'>
-                    <div className='montaj-title'>Tip montaj:</div>
-                    {tipmontaje.map((item, index) => (
-                        <div className={tipMontaj === index ? "montaj-btn-active" : "montaj-btn"} key={index} onClick={e => setTipMontaj(index)}>{item}</div>
+                    <div className='montaj-title'>Tip montaj:<span onClick={toggle} className='drop-btn'>{montajDropdown ? <ArrowLeftIcon /> : <ArrowRightIcon />}</span></div>
+                    {montajDropdown && tipmontaje.map((item, index) => (
+                        <div className={tipMontaj === index ? "montaj-btn-active" : "montaj-btn"} key={index} onClick={e => { setTipMontaj(index); toggle() }}>{item}</div>
                     ))}
                 </div>
+                {tipMontaj === 0 &&
+                    <div className='tip-montaj'>
+                        <div className='montaj-title'>Natura acoperis:<span onClick={toggle2} className='drop-btn'>{montajDropdown2 ? <ArrowLeftIcon /> : <ArrowRightIcon />}</span></div>
+                        {montajDropdown2 && naturaacoperis.map((item, index) => (
+                            <div className={acoperis === index ? "montaj-btn-active" : "montaj-btn"} key={index} onClick={e => { setAcoperis(index); toggle2() }}>{item}</div>
+                        ))}
+                    </div>}
                 <div className='tip-montaj'>
                     <div className='montaj-title'>Panou:</div>
                     <select className='select-panou' onChange={e => onChangePanou(e)} defaultValue="none">

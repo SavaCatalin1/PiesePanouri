@@ -155,6 +155,18 @@
     background-color: rgba(128, 128, 128, 0.197);
 }
 
+.drop-btn {
+    background-color: rgb(207, 212, 218);
+    border-radius: 1rem;
+    cursor: pointer;
+    justify-content: center;
+    display: flex;
+}
+
+.drop-btn:hover {
+    background-color: rgba(240, 248, 255, 0.222);
+}
+
 @media (max-width:1025px) {
     .home {
         margin-left: 16%;
