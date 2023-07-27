@@ -332,14 +332,14 @@ function Home() {
         <div>
             <Sidebar />
             <div className='home'>
-                <div className='tip-montaj'>
+                <div className='tip-montaj2'>
                     <div className='montaj-title'>Tip montaj:<span onClick={toggle} className='drop-btn'>{montajDropdown ? <ArrowLeftIcon /> : <ArrowRightIcon />}</span></div>
                     {montajDropdown && tipmontaje.map((item, index) => (
                         <div className={tipMontaj === index ? "montaj-btn-active" : "montaj-btn"} key={index} onClick={e => { setTipMontaj(index); toggle() }}>{item}</div>
                     ))}
                 </div>
                 {tipMontaj === 0 &&
-                    <div className='tip-montaj'>
+                    <div className='tip-montaj2'>
                         <div className='montaj-title'>Natura acoperis:<span onClick={toggle2} className='drop-btn'>{montajDropdown2 ? <ArrowLeftIcon /> : <ArrowRightIcon />}</span></div>
                         {montajDropdown2 && naturaacoperis.map((item, index) => (
                             <div className={acoperis === index ? "montaj-btn-active" : "montaj-btn"} key={index} onClick={e => { setAcoperis(index); toggle2() }}>{item}</div>

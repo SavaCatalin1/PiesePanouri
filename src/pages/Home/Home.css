@@ -8,6 +8,12 @@
     justify-content: center;
 }
 
+.tip-montaj2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .montaj-title {
     margin-top: 3rem;
     padding-right: 2rem;
@@ -167,7 +173,186 @@
     background-color: rgba(240, 248, 255, 0.222);
 }
 
-@media (max-width:1025px) {
+
+@media (max-width:1280px) and (min-width:1025px) {
+    .home {
+        margin-left: 16%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .tip-montaj {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 1rem;
+        align-items: flex-start;
+    }
+
+    .tip-montaj2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-left: 1rem;
+    }
+
+    .montaj-title {
+        margin-top: 1rem;
+        padding-right: 2rem;
+        justify-self: center;
+
+    }
+
+    .montaj-btn {
+        width: 10rem;
+        padding: 1rem;
+        background-color: aquamarine;
+        margin-right: 2rem;
+        margin-top: 1rem;
+        border-radius: 10px;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    .montaj-btn:hover {
+        background-color: rgba(127, 255, 212, 0.305);
+    }
+
+    .select-panou {
+        margin-top: .4rem;
+        height: 2rem;
+        min-width: 30rem;
+        max-width: 30rem;
+        margin-right: 1rem;
+
+    }
+
+    .detaliu-panou {
+        margin-top: 1rem;
+        padding-left: 0rem;
+        padding-right: 0rem;
+        margin-right: 6rem;
+    }
+
+    .montaj-btn-active {
+        text-align: center;
+        width: 10rem;
+        padding: 1rem;
+        background-color: rgb(60, 245, 183);
+        margin-right: 2rem;
+        margin-top: 1rem;
+        border-radius: 10px;
+        cursor: pointer;
+
+    }
+
+    .select-randuri {
+        margin-top: 1rem;
+        height: 2rem;
+        width: 3rem;
+        text-align: center;
+        font-size: large;
+        margin-right: 1rem;
+    }
+
+    .nr-randuri {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+
+    .randuri-title {
+        margin-top: 1rem;
+        padding-right: 1rem;
+    }
+
+    .randuri-value {
+        margin-top: 1rem;
+        height: 2rem;
+        width: 3rem;
+        text-align: center;
+        font-size: large;
+        margin-right: 1rem;
+    }
+
+    .calc-btn {
+        position: relative;
+        margin-top: 2rem;
+        padding: 1rem;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: larger;
+        margin-right: .5rem;
+        background-color: rgba(127, 255, 212, 0.53);
+    }
+
+    .calc-btn:hover {
+        background-color: aqua;
+        color: black;
+    }
+
+    .btn-randuri {
+        margin-top: 3rem;
+        height: 25px;
+        width: 3rem;
+        margin-left: 1rem;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    .btn-randuri:hover {
+        background-color: beige;
+    }
+
+    .rezultate-body {
+        margin-top: 1rem;
+        background-color: aquamarine;
+        width: 100%;
+        border-radius: 10px;
+        margin: auto;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .rezultate-row {
+        padding: 10px;
+    }
+
+    .rez-rand {
+        margin-top: 1rem;
+        background-color: aqua;
+        margin-left: 1rem;
+        width: 6rem;
+        height: 3rem;
+        text-align: center;
+        font-size: 14px;
+    }
+
+    .rez-flex {
+        display: flex;
+    }
+
+    .btn-container {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
+
+    .nr-rand-cont {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+}
+
+@media (max-width:1024px) {
     .home {
         margin-left: 16%;
         display: flex;
@@ -182,6 +367,15 @@
         align-items: center;
         justify-content: center;
         margin-left: 1rem;
+    }
+
+    .tip-montaj2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-left: 1rem;
+        align-items: flex-start;
     }
 
     .montaj-title {
