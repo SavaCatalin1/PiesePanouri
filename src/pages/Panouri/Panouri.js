@@ -120,7 +120,7 @@ function Panouri() {
                                     <thead>
                                         <tr>
                                             {Object.keys(items[0]).filter(row => row !== "id").filter(row => row !== 'numetabel').map((row, index) => (
-                                                <th className='th-dimensiuni' key={index}>{row}</th>
+                                                <th className='th-dimensiuni' key={index} style={{ borderRadius: index === row.length - 1 ? '0 10px 0 0' : '0', }}>{row}</th>
                                             ))}
                                         </tr>
                                     </thead>
