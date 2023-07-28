@@ -23,7 +23,7 @@ function Sidebar() {
             <div className={toggled ? "sidebar-off" : "sidebar"}>
                 <ul>
                     <Link to="/" style={{ textDecoration: 'none' }} > <li>Home</li></Link>
-                    <Link to="/panouri" style={{ textDecoration: 'none' }}><li>Panouri</li></Link>
+                    <Link to="/panouri" style={{ textDecoration: 'none' }}><li>Produse</li></Link>
                 </ul>
                 <img src={logo} className="logo"></img>
             </div >

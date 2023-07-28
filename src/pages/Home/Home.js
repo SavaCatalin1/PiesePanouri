@@ -14,7 +14,7 @@ const tipmontaje = ["Standard", "Est-Vest", "Mini Rail"]
 const naturaacoperis = ["Tigla", "Tabla", "Faltuita"]
 
 function Home() {
-    const [panouri, setPanouri] = useState([])
+    const [panouri, setPanouri] = useState([{}])
     const [tipMontaj, setTipMontaj] = useState(null);
     const [panou, setPanou] = useState([]);
     const [nrRanduri, setNrRanduri] = useState(0);
@@ -40,6 +40,7 @@ function Home() {
                 const newData = querySnapshot.docs
                     .map((doc) => ({ ...doc.data(), id: doc.id }));
                 setPanouri(newData);
+                console.log(newData)
             })
     }
 
@@ -299,12 +300,20 @@ function Home() {
 
     const onChangePanou = (e) => {
         e.preventDefault();
-        for (let i = 0; i < panouri.length; i++) {
-            if (e.target.value === panouri[i].nume) {
-                let dummy = [panouri[i].lungime, panouri[i].latime, panouri[i].grosime]
+        console.log(e.target.value)
+        for (const obj of panouri) {
+            if (obj.Nume === e.target.value) {
+                let dummy = [obj.Lungime, obj.Latime, obj.Grosime]
                 setPanou(dummy)
             }
         }
+
+        // for (let i = 0; i < panouri.length; i++) {
+        //     if (e.target.value === panouri[i].nume) {
+        //         let dummy = [panouri[i].lungime, panouri[i].latime, panouri[i].grosime]
+        //         setPanou(dummy)
+        //     }
+        // }
     }
 
     const toggle = () => {

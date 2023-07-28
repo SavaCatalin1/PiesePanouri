@@ -1,10 +1,53 @@
 .home {
     margin-left: 16%;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tabs-bar {
+    display: flex;
+    margin-left: .7rem;
+    margin-bottom: 1rem;
+}
+
+.tab-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: .2rem;
+    background-color: #005aab;
+    color: white;
+    padding: .5rem .5rem;
+    width: 8rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    border: 2px solid white;
+    text-shadow: 1px 1px 1px black;
+}
+
+.tab-item:hover {
+    background-color: #005baba0;
+}
+
+.tab-item-active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: .2rem;
+    background-color: #fdb814;
+    color: white;
+    padding: .5rem .5rem;
+    width: 8rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    border: 2px solid white;
+    text-shadow: 1px 1px 1px black;
 }
 
 table {
-
-    padding-right: 10rem;
     text-align: center;
 }
 
@@ -19,7 +62,7 @@ table {
 }
 
 table {
-    margin-top: 2rem;
+    margin-top: 0rem;
 }
 
 .table_body {
@@ -27,21 +70,26 @@ table {
 }
 
 .add-btn {
-    position: absolute;
-    top: 3rem;
-    right: 7rem;
-    padding: 1rem 2rem;
+    position: relative;
+    margin-top: 2rem;
+    padding: 1.3rem 3rem;
+    width: 3rem;
+    height: 2rem;
     border-radius: 10px;
     cursor: pointer;
-    background-color: #005aab;
+    background-color: #fdb814;
     font-weight: 600;
     color: white;
     border: 2px solid;
     text-shadow: 1px 1px 1px black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1rem;
 }
 
 .add-btn:hover {
-    background-color: #005bab96;
+    background-color: #fdb7148b;
     color: white;
 }
 
@@ -66,6 +114,19 @@ table {
     background-color: #005bab96;
 }
 
+.addedCategoryItem {
+    margin-left: 1rem;
+    font-weight: bold;
+    background-color: #005aab;
+    width: 10rem;
+    color: white;
+    border-radius: 2rem;
+    padding: 5px;
+    display: block;
+    text-align: center;
+    text-shadow: 1px 1px 1px black;
+}
+
 .inputs-body {
     display: flex;
     flex-direction: column;
@@ -79,6 +140,7 @@ table {
     border: 2px solid white;
     font-size: 14px;
     font-weight: 500;
+    text-align: center;
 }
 
 .input-value2 {
@@ -142,7 +204,7 @@ table {
     text-shadow: 1px 1px 1px black;
 }
 
-.th-dimensiuni:nth-child(4) {
+.th-dimensiuni:nth-child(7) {
     border-top-right-radius: 1rem;
 }
 

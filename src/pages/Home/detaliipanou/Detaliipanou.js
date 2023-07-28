@@ -1,4 +1,5 @@
 export default function Detaliipanou({ panou }) {
+    console.log(panou)
     return (
         <>
             <div className='detaliu-panou'><b>Lungime:</b> {panou[0]}</div>
