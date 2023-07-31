@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import "./Home.css"
 import Sidebar from "../../components/Sidebar/Sidebar"
-import { collection, getDocs } from 'firebase/firestore/lite';
+import { collection, getDocs, query, where } from 'firebase/firestore/lite';
 import { db } from '../../firebase';
 import Panouri from './panouri/Panouri';
 import Detaliipanou from './detaliipanou/Detaliipanou';
 import Rezultate from './rezultate/Rezultate';
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
 
@@ -29,10 +28,12 @@ function Home() {
     const [caramele, setCaramele] = useState([]);
     const [suruburi, setSuruburi] = useState([]);
     const [error, setError] = useState("");
-    const [details, setDetails] = useState([])
+    const [details, setDetails] = useState([]);
+    const [detailsData, setDetailsData] = useState([])
     const [acoperis, setAcoperis] = useState();
     const [montajDropdown, setMontajDropdown] = useState(true)
     const [montajDropdown2, setMontajDropdown2] = useState(true)
+    const [isCalculated, setIscalculated] = useState(false)
 
     const fetchPost = async () => {
         await getDocs(collection(db, "panouri"))
@@ -40,9 +41,31 @@ function Home() {
                 const newData = querySnapshot.docs
                     .map((doc) => ({ ...doc.data(), id: doc.id }));
                 setPanouri(newData);
-                console.log(newData)
+
             })
     }
+
+    const fetchDetail = async (val, x, y) => {
+        await getDocs(query(collection(db, val), where(x, "==", y)))
+            .then((querySnapshot) => {
+                const newData = querySnapshot.docs
+                    .map((doc) => ({ ...doc.data(), id: doc.id }));
+
+                const isDuplicate = detailsData.some(result => {
+
+                    console.log(result == newData)
+                    return result.id === newData.id;
+
+                });
+
+                // If it's not a duplicate, add the details to the array
+                if (!isDuplicate) {
+                    setDetailsData((prevItems) => [...prevItems, newData]);
+                }
+            })
+    }
+
+
 
     const onChangeRanduri = (e) => {
         const nrRanduri = parseInt(e.target.value, 10) || 0;
@@ -84,6 +107,7 @@ function Home() {
     }
 
     const calcTipCleme = () => {
+
         let detailss = [];
         let clemanume = ""
         let clemanumeint = ""
@@ -91,37 +115,45 @@ function Home() {
         let suruburinume = ""
         let caramelenume = ""
         //Clema interioara details
-        clemanumeint = " - Clema intermediara"
-        detailss.push(clemanumeint)
+        fetchDetail("clemeinterioare", "Cod produs", "qwerqw23")
+        // clemanumeint = " - Clema intermediara"
+        // detailss.push(clemanumeint)
         //Clema exterioara details
         if (Number(panou[2]) === 35) {
-            clemanume = " - Clema capat 35mm"
-            detailss.push(clemanume)
+            fetchDetail("clemeexterioare", "Grosime", "35")
+            // clemanume = " - Clema capat 35mm"
+            // detailss.push(clemanume)
         }
         else if (Number(panou[2]) === 40) {
-            let clemanume = " - Clema capat 40mm"
-            detailss.push(clemanume)
+            fetchDetail("clemeexterioare", "Grosime", "40")
+            // let clemanume = " - Clema capat 40mm"
+            // detailss.push(clemanume)
         }
         else if (Number(panou[2]) === 30) {
-            let clemanume = " - Clema capat 30mm"
-            detailss.push(clemanume)
+            fetchDetail("clemeexterioare", "Grosime", "30")
+            // let clemanume = " - Clema capat 30mm"
+            // detailss.push(clemanume)
         }
         else {
-            let clemanume = "-"
-            detailss.push(clemanume)
+
+            // let clemanume = "-"
+            // detailss.push(clemanume)
         }
         //Sina details
         if (tipMontaj === 2) {
-            sinanume = " - Mini Rail"
-            detailss.push(sinanume)
+            fetchDetail("sine", "Nume", "Mini Rail")
+            // sinanume = " - Mini Rail"
+            // detailss.push(sinanume)
         }
         else if (tipMontaj === 1) {
-            sinanume = " - R60"
-            detailss.push(sinanume)
+            fetchDetail("sine", "Nume", "R60")
+            // sinanume = " - R60"
+            // detailss.push(sinanume)
         }
         else if (tipMontaj === 0) {
-            sinanume = " - R52"
-            detailss.push(sinanume)
+            fetchDetail("sine", "Nume", "R52")
+            // sinanume = " - R52"
+            // detailss.push(sinanume)
         }
         //Prinderi details
         if (tipMontaj === 1) {
@@ -159,6 +191,8 @@ function Home() {
         }
         detailss.push(suruburinume)
         setDetails(detailss);
+        console.log(detailsData)
+
     }
 
     const handleSubmit = (e) => {
@@ -201,7 +235,6 @@ function Home() {
             let calcule = [clemeintnrtotal, clemeexterioare, sina, carameletotal, suruburitotal];
             setRezultat(calcule);
             setShowRez(true);
-            calcTipCleme();
 
         }
         else if (tipMontaj === 1) {
@@ -243,7 +276,7 @@ function Home() {
             let calcule = [clememicinrtotal, clememari, sina, carameletotal, suruburitotal];
             setRezultat(calcule);
             setShowRez(true);
-            calcTipCleme()
+
         }
         else if (tipMontaj === 2) {
             //Mini Rail
@@ -294,8 +327,9 @@ function Home() {
             let calcule = [clemeintnrtotal, clemeexterioare, sina, carameletotal, suruburitotal];
             setRezultat(calcule);
             setShowRez(true);
-            calcTipCleme()
+
         }
+        calcTipCleme()
     }
 
     const onChangePanou = (e) => {
@@ -307,13 +341,6 @@ function Home() {
                 setPanou(dummy)
             }
         }
-
-        // for (let i = 0; i < panouri.length; i++) {
-        //     if (e.target.value === panouri[i].nume) {
-        //         let dummy = [panouri[i].lungime, panouri[i].latime, panouri[i].grosime]
-        //         setPanou(dummy)
-        //     }
-        // }
     }
 
     const toggle = () => {
@@ -341,12 +368,16 @@ function Home() {
             setEnableField(true);
         }
         setShowRez(false);
+
     }, [tipMontaj, panou])
 
     useEffect(() => {
         fetchPost()
-        console.log(panouri)
+
     }, [])
+
+
+
 
 
     return (
@@ -401,7 +432,7 @@ function Home() {
                         </div>}
                     {showRez ?
                         <div className='rez-flex'>
-                            <Rezultate tipMontaj={tipMontaj} rezultat={rezultat} details={details} />
+                            <Rezultate tipMontaj={tipMontaj} rezultat={rezultat} details={detailsData} />
                         </div> : ""}
                 </form>
             </div >

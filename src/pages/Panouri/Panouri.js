@@ -31,7 +31,7 @@ function Panouri() {
 
 
     const fetchPost = async () => {
-        console.log(categorieSelected.nume)
+
         await getDocs(query(collection(db, categorieSelected.nume), orderBy("Nume", "asc")))
             .then((querySnapshot) => {
                 const newData = querySnapshot.docs

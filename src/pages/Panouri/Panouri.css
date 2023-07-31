@@ -71,7 +71,7 @@ table {
 
 .add-btn {
     position: relative;
-    margin-top: 2rem;
+    margin-top: .2rem;
     padding: 1.3rem 3rem;
     width: 3rem;
     height: 2rem;
@@ -85,7 +85,7 @@ table {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 1rem;
+    margin-left: 0rem;
 }
 
 .add-btn:hover {
@@ -217,7 +217,7 @@ table {
 
 .td-dimensiuni {
     background-color: #ffffff;
-    width: 100px;
+    width: 300px;
     padding-right: 10rem;
     text-align: center;
     padding: 10px;
