@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
 import Sidebar from '../../components/Sidebar/Sidebar'
 import "./Panouri.css"
-import { addDoc, collection, deleteDoc, doc, getDocs, orderBy, query } from 'firebase/firestore/lite';
+import { addDoc, collection, deleteDoc, doc, getDocs, orderBy, query, updateDoc } from 'firebase/firestore/lite';
 import { db } from '../../firebase';
+import EditIcon from '@mui/icons-material/Edit';
+import CheckIcon from '@mui/icons-material/Check';
 
 function Panouri() {
     const [categorii, setCategorii] = useState([])
@@ -11,6 +13,8 @@ function Panouri() {
     const [isAdding, setIsAdding] = useState(false)
     const [nrPanouri, setNrPanouri] = useState()
     const [post, setPost] = useState()
+    const [isInputActive, setInputActive] = useState();
+    const [changingPrice, setChangingPrice] = useState();
 
 
     Object.defineProperty(categorieSelected, 'nume', {
@@ -32,7 +36,22 @@ function Panouri() {
             .then((querySnapshot) => {
                 const newData = querySnapshot.docs
                     .map((doc) => ({ ...doc.data(), id: doc.id }));
-                setItems(newData);
+
+                //Sorting data
+                const desiredKeyOrder = ['Nume', 'Pret', 'Lungime', 'Latime', 'Grosime'];
+                const rearrangedData = newData.map(item => {
+                    const reorderedItem = {};
+                    desiredKeyOrder.forEach(key => {
+                        reorderedItem[key] = item[key];
+                    });
+                    Object.keys(item).forEach(key => {
+                        if (!desiredKeyOrder.includes(key)) {
+                            reorderedItem[key] = item[key];
+                        }
+                    });
+                    return reorderedItem;
+                });
+                setItems(rearrangedData);
                 setNrPanouri(newData.length)
             })
 
@@ -81,9 +100,35 @@ function Panouri() {
         }
     }
 
+    const handleButtonClick = (val) => {
+        if (isInputActive === val && changingPrice !== undefined) {
+            const examcollref = doc(db, categorieSelected.nume, val)
+            updateDoc(examcollref, {
+                Pret: changingPrice
+            }).then(response => {
+                alert("updated")
+            }).catch(error => {
+                console.log(error.message)
+            })
+            setInputActive('a')
+        }
+        else if (isInputActive === val && changingPrice === undefined) {
+            setInputActive('a')
+
+        }
+        else {
+            setInputActive(val);
+        }
+    };
+
+    const handleInputChange = (e) => {
+        setChangingPrice(e.target.value)
+
+    };
+
     useEffect(() => {
         fetchCategorii()
-        console.log(categorii)
+
 
     }, [])
 
@@ -92,9 +137,6 @@ function Panouri() {
         console.log(categorieSelected)
         if (Object.keys(categorieSelected).length > 0) {
             fetchPost()
-            console.log(categorii)
-            console.log(categorieSelected)
-            console.log(items)
         }
         setPost()
     }, [nrPanouri, categorieSelected])
@@ -120,7 +162,7 @@ function Panouri() {
                                     <thead>
                                         <tr>
                                             {Object.keys(items[0]).filter(row => row !== "id").filter(row => row !== 'numetabel').map((row, index) => (
-                                                <th className='th-dimensiuni' key={index} style={{ borderRadius: index === row.length - 1 ? '0 10px 0 0' : '0', }}>{row}</th>
+                                                <th className='th-dimensiuni' key={index} >{row}</th>
                                             ))}
                                         </tr>
                                     </thead>
@@ -128,8 +170,10 @@ function Panouri() {
                                         {items.map((item, index) => (
                                             <tr key={index}>
                                                 {console.log(item)}
-                                                {Object.entries(item).filter(row => row.indexOf("id")).map(([val, key]) => (
-                                                    (key === "Nume" ? "" : <td className='td-dimensiuni'>{key}</td>)
+                                                {Object.entries(item).map(([val, key]) => (
+                                                    (val === "id" ? "" :
+                                                        (val === "Pret" ? <td className='td-dimensiuni'>{isInputActive === item.id ? < input placeholder={key} disabled={!isInputActive} onChange={handleInputChange} className='input-pret'></input> : <span>{key}</span>}{<span className='modify-btn' onClick={() => handleButtonClick(item.id)}>{isInputActive === item.id ? <CheckIcon sx={{ fontSize: 13 }} /> : <EditIcon sx={{ fontSize: 13 }} />}</span>}</td> : <td className='td-dimensiuni'>{key}</td>))
+
                                                 ))}
                                                 <td className='td-remove' onClick={() => handleDel(item.id)}>X</td>
                                             </tr>
